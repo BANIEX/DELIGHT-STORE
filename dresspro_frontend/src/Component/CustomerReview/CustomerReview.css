@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.customer_review_content_wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_head {
+  text-align: center;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_head .customer_review_content_top_header {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_head .customer_review_content_top_sub_header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 80%;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 5.25rem 0;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 200px;
+  padding: 10px;
+  margin: 0.625rem 0;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal .left {
+  width: 10rem;
+  height: 10rem;
+  background: url("/src/assets/images/RENAME-14.jpg");
+  background-position: center;
+  border-radius: 50%;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal .right {
+  width: 60%;
+  padding-left: 25px;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal .right .story {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal .right .name {
+  font-weight: 900;
+}
+
+@media screen and (max-width: 950px) {
+  .customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_head .customer_review_content_top_header {
+    margin-top: 30px;
+    font-size: 1.5rem;
+  }
+  .customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal {
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 0px auto;
+  }
+  .customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal .left {
+    margin: 0px auto;
+  }
+  .customer_review_content_wrapper .customer_review_content_sub_wrapper .customer_review_content_body .customer_review_content_personal .right {
+    margin: 5px auto;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    vertical-align: middle;
+  }
+}

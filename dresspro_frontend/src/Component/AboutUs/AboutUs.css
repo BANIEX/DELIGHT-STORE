@@ -1,0 +1,92 @@
+
+.about_us_nav_display {
+  /* border: 2px solid red; */
+  /* margin: 0px auto; */
+  text-align: center;
+  line-height: 25px;
+  background: rgb(218, 171, 187);
+}
+
+.about_us_first_half {
+  text-align: center;
+  font-family: "Cinzel";
+  margin-top: 50px;
+}
+
+.about_us_first_half_header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.about_us_first_half_image {
+  width: 95%;
+  height: 600px;
+  margin: 0px auto;
+  margin-top: 40px;
+}
+.about_us_first_half_image img {
+  width: 100%;
+  height: 100%;
+}
+.about_us_first_half_content {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.about_us_second_half {
+  text-align: center;
+  font-family: "Cinzel";
+  margin-top: 50px;
+}
+
+.about_us_second_half_header {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.about_us_second_half_bottom {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+  font-weight: 600;
+}
+.about_us_second_half_bottom .about_us_second_half_left {
+  width: 50%;
+  height: 100%;
+}
+.about_us_second_half_bottom .about_us_second_half_left .about_us_second_half_left_image_container {
+  margin: 0px auto;
+  width: 80%;
+  height: 80%;
+  background: url("/src/assets/images/RENAME-11.jpg");
+  background-size: cover;
+}
+.about_us_second_half_bottom .about_us_second_half_right {
+  width: 50%;
+}
+
+@media screen and (max-width: 700px) {
+  .about_us_second_half_bottom {
+    flex-direction: column;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .about_us_second_half_bottom .about_us_second_half_left {
+    width: 100%;
+  }
+  .about_us_second_half_bottom .about_us_second_half_left .about_us_second_half_left_image_container {
+    height: 400px;
+  }
+  .about_us_second_half_bottom .about_us_second_half_right {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}

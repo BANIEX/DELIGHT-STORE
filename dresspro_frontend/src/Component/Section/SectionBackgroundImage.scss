@@ -1,0 +1,66 @@
+@for $i from 0 through 36 {
+    .section_image#{$i} {
+        background: url('../../assets/images/RENAME-#{$i}.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@for $i from 0 through 36 {
+    #smockedtops_image#{$i} {
+        background: url('../../assets/smockedtopsimages/RENAME-#{$i}.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+// @for $i from 0 through 36 {
+//     .rucheddresses_image#{$i} {
+//         background: url('../../assets/rucheddressesimages/RENAME-#{$i}.jpg');
+//         background-size: cover;
+//         background-repeat: no-repeat;
+
+//     }
+// }
+
+@for $i from 0 through 36 {
+    .wraptops_image#{$i} {
+        background: url('../../assets/wraptopsimages/RENAME-#{$i}.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+@for $i from 0 through 36 {
+    .miniskirts_image#{$i} {
+        background: url('../../assets/miniskirtsimages/RENAME-#{$i}.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+@for $i from 0 through 36 {
+    .satindresses_image#{$i} {
+        background: url('../../assets/satindressesimages/RENAME-#{$i}.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@for $i from 0 through 36 {
+    .twopieces_image#{$i} {
+        background: url('../../assets/twopiecesimages/RENAME-#{$i}.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+

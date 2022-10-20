@@ -1,0 +1,85 @@
+$four: 4;
+$three: 4;
+
+
+@for $i from 1 through $four {
+    #smockedtops#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@for $i from 1 through 4 {
+    #rucheddresses#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@for $i from 1 through 4 {
+    #wraptops#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@for $i from 1 through 4 {
+    #miniskirts#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+@for $i from 1 through 4 {
+    #satindresses#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+
+@for $i from 1 through 4 {
+    #twopieces#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+
+@for $i from 1 through 4 {
+    #baniex#{$i} {
+        // background: url('../dress_pro_images/RENAME-#{$i}.jpg');
+        background: url("../../assets/images/RENAME-#{$i}.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+// #smockedtops1, #rucheddresses1, #wraptops1, #miniskirts1, #satindresses1, #twopieces1 {
+//   background: url("../../assets/images/RENAME-11.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }

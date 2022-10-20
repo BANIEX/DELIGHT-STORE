@@ -1,0 +1,117 @@
+
+/* SMOCKED TOPS SECTION */
+.specifics_top_section {
+  margin-top: 20px;
+  /* border: 2px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.specifics_header {
+  /* display: flex; */
+  padding-left: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.specifics_content {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.specifics_container {
+  width: 25%;
+  height: 300px;
+  margin-bottom: 20px;
+  /* border: 2px solid black; */
+}
+.specifics {
+  height: 100%;
+  width: 95%;
+  /* margin: 0 auto; */
+  /* border: 2px solid red; */
+}
+.specifics_more {
+  /* border: 2px solid red; */
+  text-align: center;
+  font-size: 1.5rem;
+}
+.sub_specifics_more {
+  width: max-content;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0px auto;
+  padding: 0px 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sub_specifics_more:hover {
+  color: white;
+  background: palevioletred;
+}
+
+@media screen and (max-width: 800px) {
+  .specifics_content {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+  }
+  .specifics_container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .specifics{
+    margin: 0 auto;
+  }
+  .specifics_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .specifics_container {
+    width: 100%;
+  }
+  /* div ul:not(:first-child){
+    background-color: #900;
+ } */
+ .specifics_second_div_container,
+ .specifics_third_div_container,
+ .specifics_fourth_div_container{
+  display: none;
+ }
+
+}
+
+
+
+
+
+
+
+
+/* #smockedtops1, #rucheddresses1, #wraptops1, #miniskirts1, #satindresses1, #twopieces1 {
+  background: url("/src/assets/images/RENAME-11.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+/* 
+#smockedtops2, #rucheddresses2, #wraptops2, #miniskirts2, #satindresses2, #twopieces2 {
+  background: url("/src/assets/images/RENAME-10.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#smockedtops3, #rucheddresses3, #wraptops3, #miniskirts3, #satindresses3, #twopieces3 {
+  background: url("/src/assets/images/RENAME-14.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#smockedtops4, #rucheddresses4, #wraptops4, #miniskirts4, #satindresses4, #twopieces4 {
+  background: url("/src/assets/images/RENAME-14.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */

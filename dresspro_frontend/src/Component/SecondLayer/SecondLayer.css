@@ -1,0 +1,132 @@
+
+.swiper1 {
+  width: 100%;
+  height: 700px;
+  padding-bottom: 100px;
+  /* margin-top: 40px; */
+  /* border: 2px solid red; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* font-size: 40px; */
+}
+
+.swiper-slide{
+  margin: 0px auto;
+}
+.text-container-div {
+  /* border: 2px solid red; */
+  display: block;
+  /* margin-top: 110px ; */
+  margin: 110px auto;
+}
+.explore,
+.your,
+.true,
+.style {
+  text-align: center;
+  font-size: 4.2rem;
+  color: white;
+  font-weight: 900;
+  font-stretch: ultra-expanded;
+  letter-spacing: 4px;
+  font-family: "Cinzel", serif;
+}
+/* SMALLER SCREEN FOR SECOND LAYER */
+
+@media screen and (max-width: 600px) {
+  .swiper1 {
+    height: 400px;
+  }
+  .text-container-div {
+    display: block;
+    margin-top: 0px;
+  }
+  .explore,
+  .your,
+  .true,
+  .style {
+    font-size: 3.5rem;
+    letter-spacing: 0px;
+  }
+}
+
+#slide0 {
+  background: url("/src/assets/images/about1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+}
+
+#slide1 {
+    background: url("/src/assets/images/RENAME-17.jpg");
+  height: 100%;
+  /* position: absolute;
+  top: 0; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide2 {
+  background: url("/src/assets/images/RENAME-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide3 {
+  background: url("/src/assets/images/RENAME-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide4 {
+  background: url("/src/assets/images/RENAME-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide5 {
+  background: url("/src/assets/images/RENAME-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide6 {
+  background: url("/src/assets/images/RENAME-5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide7 {
+  background: url("/src/assets/images/RENAME-6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide8 {
+  background: url("/src/assets/images/RENAME-7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid green; */
+
+}
+
+#slide9 {
+  background: url("/src/assets/images/RENAME-8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

@@ -1,0 +1,222 @@
+/* BEGINNING OF NAVBAR */
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* border: 2px solid gray; */
+  align-items: center;
+  text-align: center;
+  height: 100px;
+}
+
+.brand_name {
+  font-size: 1.8rem;
+  /* border: 2px solid blue; */
+  margin-left: 20px;
+  font-family: "Cinzel", serif;
+  /* color: palevioletred; */
+}
+
+.toggle {
+  display: none;
+  /* border: 2px solid red; */
+  padding-top: 3px;
+}
+
+.links_div{
+  display: flex;
+  align-items: center;
+}
+
+
+.links_div{
+  display: flex;
+  align-items: center;
+}
+
+
+.links_div ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+
+
+  /* border:  2px solid yellow; */
+}
+
+.links a {
+  margin: 2px 11px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.social {
+  margin-right: 50px;
+  display: flex;
+}
+
+.social a, .social div {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  margin-right: 4px;
+  /* padding-left: 12px; */
+}
+
+.dropbtn {
+  background-color: palevioletred;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+ .dropdown {
+  position: relative;
+  display: inline-block;
+} 
+
+ .dropdown-content {
+  display: none; 
+  position: absolute;
+  background-color: #f1f1f1;
+  /* border: 2px solid red; */
+  min-width: 160px;
+  margin-top: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 16;
+} 
+
+.dropdown-content a {
+  color: black;
+  /* border: 1px solid yellow; */
+  /* min-width: 160px; */
+  width: 100%;
+
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: rgb(87, 85, 85);
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(183, 74, 110);}
+/* unvisited link */
+nav a:link {
+  color: black;
+}
+
+/* visited link */
+nav a:visited {
+  color: black;
+}
+
+/* mouse over link */
+nav a:hover {
+  color: palevioletred;
+}
+
+/* selected link */
+nav a:active {
+  color: palevioletred;
+  /* border-top: 2px solid blue; */
+}
+.mobile{
+  display: none;
+}
+
+.mobile-name{
+  display: none;
+}
+
+/* MEDIA QUERIES FOR SMALLER SCREEN OF NAVBAR  */
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 760px) {
+  nav {
+    flex-direction: column;
+    background: white;
+    height: max-content;
+  }
+
+  .brand_and_toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .cc{
+    display: flex;
+  }
+
+  /* .brand_name{font-size: 1.2rem;} */
+
+  .links_div {
+    width: 100%;
+    position: absolute;
+    /* top: -200px; */
+    top: 39px;
+    left: -700px;
+
+    z-index: -6;
+    transition: 1s all ease-in;
+     /* background: palevioletred; */
+         
+    /* background: #b3afc0; */
+    background: rgb(160, 110, 127);
+
+  }
+
+  .links_div.show {
+    /* top: 39px; */
+    left: 0px;
+    z-index: 200;
+
+  }
+
+  .links_div ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background: rgb(85, 79, 79); */
+    /* color: white; */
+  }
+
+  .links {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-weight: 500;
+    /* border: 2px solid green; */
+  }
+
+  .social {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    margin-right: 20px;
+    margin-top: 8px;
+  }
+
+  .links_div ul li a {
+    color: white;
+
+
+  }
+  .mobile{
+    display: block;
+    margin-right: 0px;
+    margin-top: 10px;
+  }
+  .mobile-name{
+    display: block;
+  }
+}
+
+/* END OF NAVBAR */

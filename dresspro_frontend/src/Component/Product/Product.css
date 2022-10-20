@@ -1,0 +1,190 @@
+.mySwiper{
+  height: 300px;
+}
+
+
+
+
+.second-swiper {
+  width: 100%;
+  height: 400px;
+  /* padding-bottom: 100px; */
+  margin-top: 50px;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  /* border: 2px solid yellow; */
+
+}
+.swiper-wrapper{
+  height: 100%;
+}
+
+.swiper-pagination {
+  font-size: 2px;
+}
+.swiper-pagination-bullet {
+  background-color: blue;
+  display: inline-block;
+  width: 0.2rem;
+  height: 2rem;
+}
+
+.on_hover_display {
+  display: none;
+  /* display: block; */
+}
+
+.middle_hover {
+  /* border: 2px solid red; */
+  margin: 0px auto;
+  margin-top: 200px;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+  background: palevioletred;
+  width: 60%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.middle_hover:hover {
+  background: rgb(216, 62, 113);
+}
+
+.down_hover {
+  /* border: 2px solid red; */
+  margin-top: 132px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: "Cinzel", serif;
+  color: white;
+  background: rgb(85, 79, 79);
+  /* background: rgb(83,53,43); */
+  padding: 4px 0;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+  .second-swiper {
+    height: 300px;
+    margin-top: 20px;
+  }
+  .middle_hover {
+    margin-top: 130px;
+  }
+  .down_hover {
+    margin-top: 102px;
+  }
+}
+
+
+#swiper2-slide0 {
+  background: url("/src/assets/images/RENAME-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  /* height: 100%; */
+}
+#swiper2-slide1 {
+  background: url("/src/assets/images/RENAME-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide2 {
+  background: url("/src/assets/images/RENAME-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide3 {
+  background: url("/src/assets/images/RENAME-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide4 {
+  background: url("/src/assets/images/RENAME-5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide5 {
+  background: url("/src/assets/images/RENAME-6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide6 {
+  background: url("/src/assets/images/RENAME-7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide7 {
+  background: url("/src/assets/images/RENAME-8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide8 {
+  background: url("/src/assets/images/RENAME-9.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide9 {
+  background: url("/src/assets/images/RENAME-10.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+#swiper2-slide5 {
+  background: url("/src/assets/images/RENAME-11.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  /* height: 600px; */
+  height: 100%;
+}
+
+
+
+
+.swiper-pagination-bullet {
+        background-color: palevioletred;
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    /* change color of next 2 bullets in sequence to white*/
+
+.swiper-pagination-bullet-active-next, .swiper-pagination-bullet-active-next-next {
+    background-color: palevioletred;
+}
+
+    /* change color of previous bullet to white*/
+
+.swiper-pagination-bullet-active-prev {
+    background-color: palevioletred;
+}

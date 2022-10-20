@@ -1,0 +1,155 @@
+.top_of_cart{
+  margin-top: -3.125rem;
+}
+
+.cart-text{
+  font-size: 1.9rem;
+}
+.cart-page{
+  display: flex;
+  font-weight: 900;
+  /* border: 2px solid blue; */
+}
+.cart-container{
+  width: 65%;
+  /* border: 2px solid black; */
+  margin: .3125rem;
+  box-shadow: .0625rem .0625rem .0625rem .0625rem;
+
+}
+.checkout-container{
+  width: 35%;
+  margin: .3125rem;
+  /* border: 2px solid green */
+
+}
+.cart-specific-top-left-content{
+  display: flex;
+}
+
+
+.cart-img{
+  width: 65px;
+  height: 65px;
+}
+.cart-name{
+  padding-left: 1rem;
+}
+
+
+
+
+.cart-specific{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  /* border: 2px solid red; */
+}
+
+
+.cart-specific-top{
+  display: flex;
+
+  justify-content: space-between;
+  margin-top: 5px;
+  
+}
+.cart-specific-top-left{
+  /* width: 90%; */
+  font-weight: 900;
+
+}
+.cart-specific-top-right{
+  /* width: 10%; */
+  font-size: 20px;
+  font-weight: 900;
+  margin-right: 1.25rem;
+}
+.cart-specific-bottom{
+  display: flex;
+  /* border: 2px solid yellow; */
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 900;
+
+
+  
+}
+ .cart-specific-bottom > :nth-child(1){
+  display: flex;
+
+  /* justify-content: space-around; */
+ }
+
+
+ .cart-specific-bottom > :nth-child(1) > div{
+  margin-right: 15px;
+  margin-left: 15px;
+
+ }
+.cart-specific-bottom > :nth-child(2), .cart-specific-bottom > :nth-child(1) > div{
+  /* border: .125rem solid black; */
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+
+.cart-specific-bottom > :nth-child(2){
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+
+ }
+
+
+ .receiver{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+ }
+
+
+
+
+
+ /* CHECKOUT CONTAINER SECTION */
+ .checkout-container{
+  /* border: 1px solid black; */
+  /* border: firebrick; */
+  padding: 20px ;
+  box-shadow: .0625rem .0625rem .0625rem .0625rem;
+
+ }
+
+ .checkout-continue{
+  margin: 0px auto;
+  text-align: center;
+  background-color: rgb(0,113,220);
+ }
+ .subtotal-checkout, .estimated-total-checkout{
+  display: flex;
+  justify-content: space-between;
+ }
+ .subtotal-checkout > span{
+
+ }
+
+
+ @media screen and (max-width: 715px) {
+
+  .cart-page{
+    flex-direction: column;
+  }
+  .cart-container{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .checkout-container{
+    width: 100%;
+  }
+  
+ }
+
