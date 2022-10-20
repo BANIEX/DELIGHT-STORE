@@ -1,4 +1,9 @@
+import path from "path";
+const __dirname = path.resolve()
+
 const express = require("express");
+
+
 require("dotenv").config(); 
 
 const mongodb = require("mongodb");
@@ -48,18 +53,18 @@ app.use("/checkout_store", checkout_storeRouter);
 // for deploymrny
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static("dresspro_frontend/build"));
+  app.use(express.static(path.join(__dirname, "/dresspro_frontend/build")));
 
-  // app.get( "*", (req,res) =>{
-  //   res.sendFile(path.join(__dirname, "dresspro_frontend", "build", "index.html"))
-  // });
+  app.get( "*", (req,res) =>{
+    res.sendFile(path.join(__dirname, "dresspro_frontend", "build", "index.html"))
+  });
 
 }
-// else{
-//   app.get("*", (req, res)=>{
-//     res.send("Api running");
-//   })
-// }
+else{
+  app.get("*", (req, res)=>{
+    res.send("Api running");
+  })
+}
 
 app.listen(PORT, function () {
   console.log(`Running on port ${PORT}`);
