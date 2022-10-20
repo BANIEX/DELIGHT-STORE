@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Policy.css"
 
-export const Policy = () => {
+export const Policy = (props) => {
+  let navbar_closer = props.navbar_closer;
+  
   return (
-    <div>
+    <div onClick={navbar_closer}>
       <div className="company_policy_info">
         <div className="company_policy_nav_display">Home &gt; Company Policy</div>
       </div>

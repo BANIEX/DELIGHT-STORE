@@ -9,6 +9,7 @@ export default function Home(props) {
 
   let dressProData = props.dressProData
   let addToCartHandler = props.addToCartHandler
+  let navbar_closer = props.navbar_closer
 
   function second_layer_hover(event) {
     event.currentTarget.querySelector(".on_hover_display").style.display =
@@ -23,7 +24,7 @@ export default function Home(props) {
 
 
   return (
-    <>
+    <div onClick={navbar_closer}>
       <SecondLayer />
       <Product
         second_layer_hover={second_layer_hover}
@@ -32,6 +33,6 @@ export default function Home(props) {
       />
       <Specific dressProData={dressProData} addToCartHandler={addToCartHandler}/>
       <Feature />
-    </>
+    </div>
   );
 }

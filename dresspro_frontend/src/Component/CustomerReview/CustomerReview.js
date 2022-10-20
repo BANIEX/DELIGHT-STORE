@@ -1,9 +1,12 @@
 import React from "react";
 import "./CustomerReview.css";
 
-export default function CustomerReview() {
+export default function CustomerReview(props) {
+
+  let navbar_closer = props.navbar_closer;
+
   return (
-    <div className="customer_review_content_wrapper">
+    <div className="customer_review_content_wrapper" onClick={navbar_closer}>
       <div className="customer_review_content_sub_wrapper">
         <div className="customer_review_content_head">
           <div className="customer_review_content_top_header">

@@ -87,6 +87,19 @@ export default function SpaceAtTheSide() {
     document.getElementsByClassName("links_div")[0].classList.toggle("show");
   }
 
+  function navbar_closer(){
+
+    let navbar = document.getElementsByClassName("links_div")[0];
+
+    if (navbar.classList.contains("show")){
+         navbar.classList.remove("show");
+    }
+
+
+
+    
+  }
+
   useEffect(() => {
     if (isLoggedIn) {
       // navigate("/")
@@ -311,13 +324,23 @@ export default function SpaceAtTheSide() {
               <Home
                 dressProData={dressProData}
                 addToCartHandler={addToCartHandler}
+                navbar_closer={navbar_closer}
               />
             }
           ></Route>
-          <Route path="/customer" element={<CustomerReview />}></Route>
-          <Route path="/about" element={<AboutUs />}></Route>
-          <Route path="/policy" element={<Policy />}></Route>
 
+          <Route
+            path="/customer"
+            element={<CustomerReview navbar_closer={navbar_closer} />}
+          ></Route>
+          <Route
+            path="/about"
+            element={<AboutUs navbar_closer={navbar_closer} />}
+          ></Route>
+          <Route
+            path="/policy"
+            element={<Policy navbar_closer={navbar_closer} />}
+          ></Route>
           <Route
             path="/cart"
             element={
@@ -347,7 +370,6 @@ export default function SpaceAtTheSide() {
             path="/manifest"
             element={<Manifest isLoggedIn={isLoggedIn} userData={userData} />}
           ></Route>
-
           <Route path="/admin/login" element={<AdminPage />}></Route>
           <Route path="/verify" element={<Verify />}></Route>
         </Routes>

@@ -79,12 +79,16 @@
 }
   .about_us_first_half_content{
     width: 100%;
+    font-size: medium;
+    font-weight: 500;
   }
   .about_us_second_half_bottom {
     flex-direction: column;
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
+    font-size: medium;
+    font-weight: 500;
   }
   .about_us_second_half_bottom .about_us_second_half_left {
     width: 100%;
@@ -93,11 +97,14 @@
     height: 400px;
   }
   .about_us_second_half_bottom .about_us_second_half_right {
+   margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
+    width: 90%;
+
   }
 }
