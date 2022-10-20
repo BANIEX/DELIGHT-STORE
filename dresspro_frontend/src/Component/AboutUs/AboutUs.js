@@ -13,12 +13,11 @@ export default function AboutUs() {
       <div className="about_us_first_half">
         <div className="about_us_first_half_header">ABOUT US</div>
         <div className="about_us_first_half_content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos corrupti
-          quam nulla aut voluptatum quo odio, maxime quibusdam minus
-          perspiciatis aspernatur explicabo possimus. Maiores, quia voluptatum!
-          Nobis molestias ipsum corrupti tenetur error aliquid qui in, maiores
-          quod laudantium! Necessitatibus quod unde odio tempore atque illo
-          laboriosam assumenda sed error eius?
+          Delight Express Cargo is a Cargo and logistics company. We help our
+          customers send and receive goods and packages in and out of the
+          country at the best rate posiible. We also help save customers save
+          stress by shopping from our product store and sending the goods to
+          their destination countries
         </div>
         <div className="about_us_first_half_image">
           <img src={img} alt="dress_pro" />
@@ -27,31 +26,30 @@ export default function AboutUs() {
 
       <div className="about_us_second_half">
         <div className="about_us_second_half_top">
-          <div className="about_us_second_half_header">MEET OUR CEO</div>
+          <div className="about_us_second_half_header">OVERVIEW</div>
         </div>
         <div className="about_us_second_half_bottom">
           <div className="about_us_second_half_left">
             <div className="about_us_second_half_left_image_container"></div>
           </div>
           <div className="about_us_second_half_right">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet natus
-            velit nisi laborum repellendus eius dolorem ea facilis dicta culpa
-            labore, doloremque, consectetur architecto? Laudantium sequi
-            ratione, quos culpa enim reprehenderit voluptas aperiam cupiditate
-            nulla ipsum assumenda ipsam quas totam perferendis dolor. Aliquam
-            nam accusamus et quae assumenda voluptas quisquam necessitatibus
-            reiciendis nostrum, voluptatibus quidem voluptatum pariatur, labore
-            beatae architecto voluptatem eos sed vero voluptates dignissimos
-            veritatis omnis porro inventore? Impedit, temporibus? Quis fugiat
-            magnam, voluptatum in eveniet accusantium odio quae maiores, dolor,
-            et rem est nemo ad. Nam aliquid laudantium cumque molestiae unde
-            earum, tenetur maxime quis a illo sequi expedita ipsam magnam et id
-            excepturi, dolor fuga hic ipsa. Eos consequuntur similique
-            perspiciatis ducimus fuga totam corrupti distinctio, ullam aliquam
-            ipsa at nihil, tenetur quis minima fugit perferendis vitae ad soluta
-            vel? Illo ab repudiandae aut natus, laboriosam porro non
-            perferendis, tempore magnam provident deleniti cupiditate atque
-            reiciendis.
+            With our dedicated team of professionals and years of experience
+            handling packages. We make sure your packages are handled with the
+            best of care, the documentation is well handled and our
+            communication proces is very clean. We are also very timely woth
+            package delivery. We are honest and trustworthy and leave no room
+            for complacency. We are keen on giving our custimesrs the best
+            service they deserve. Over the years we have handle over two
+            thousand pacakages sent and receive acrosst the borders of numerous
+            countries in the globe, expanding and making sure our customers get
+            the best of services at the very best rate in the shortest time.We
+            have also taken the time to eliminate third party communication that
+            slows down buying processes and other shenanigans by integrating our
+            product store. We also take our client relationship and feedbacks
+            seriously between and this why we have recommendation rate of as
+            high as sixty person. This process ensures that we are on top of our
+            game, day and night and that we are always DELIGHTED to serve our
+            customers.
           </div>
         </div>
       </div>

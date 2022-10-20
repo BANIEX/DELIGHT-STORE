@@ -4,7 +4,8 @@
   /* margin: 0px auto; */
   text-align: center;
   line-height: 25px;
-  background: rgb(218, 171, 187);
+  /* background: rgb(218, 171, 187); */
+  background: rgb(15,173,183);
 }
 
 .about_us_first_half {
@@ -30,9 +31,11 @@
   height: 100%;
 }
 .about_us_first_half_content {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  margin: 0 auto;
   margin-top: 20px;
+  width: 80%;
 }
 
 .about_us_second_half {
@@ -69,6 +72,14 @@
 }
 
 @media screen and (max-width: 700px) {
+  .about_us_first_half_header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+  .about_us_first_half_content{
+    width: 100%;
+  }
   .about_us_second_half_bottom {
     flex-direction: column;
     height: -webkit-max-content;
