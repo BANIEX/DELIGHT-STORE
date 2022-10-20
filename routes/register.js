@@ -62,7 +62,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
   } else {
     let hashedPassword = await bcryptjs.hash(password, 12);
 
-    const email_link = `http://localhost:3000/verify?email=${email}&&key=${key}`;
+    const email_link = `https://delight-express-cargo.herokuapp.com/verify?email=${email}&&key=${key}`;
 
     const mailOptions = {
       from: process.env.EMAIL_ADDRESS,

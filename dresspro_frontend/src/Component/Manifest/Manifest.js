@@ -8,6 +8,8 @@ import "./Manifest.css"
 
 const Manifest = (props) => {
   const navigate = useNavigate();
+  let navbar_closer = props.navbar_closer;
+
 
 
   let {isLoggedIn, userData} = props;
@@ -126,7 +128,7 @@ const Manifest = (props) => {
 
 
   return (
-    <div className="manifest-container">
+    <div className="manifest-container" onClick={navbar_closer}>
       <div className="form">
         <p className="manifest-text">MANIFEST</p>
         <br/>

@@ -50,13 +50,13 @@ export default function Navbar(props) {
         <div className="brand_name">DELIGHT </div>
         <div className="cc">
           <div className="social mobile">
-            <Link to="/cart">
+            {/* <Link to="/cart">
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>
               {"\u00A0"}
               {"\u00A0"}
               {"\u00A0"}
               {"\u00A0"}
-            </Link>
+            </Link> */}
           </div>
           <div className="toggle" onClick={navbar_toggler}>
             <i className="fas fa-bars"></i>
@@ -71,18 +71,32 @@ export default function Navbar(props) {
           </li> */}
           <div className="line"></div>
 
-          <li className="links">
+          {/* <li className="links">
             <Link to="/">Products</Link>
-          </li>
-          <li className="links">
+          </li> */}
+          {/* <li className="links">
             <Link to="/customer">Customers Review</Link>
-          </li>
-          <li className="links">
+          </li> */}
+          {/* <li className="links">
             <Link to="/about">About Us</Link>
+          </li> */}
+          <li className="links">
+            <Link to="/">About Us</Link>
           </li>
           <li className="links">
             <Link to="/policy">Company Policy</Link>
           </li>
+          {/* <li className="links">
+            <Link to="/manifest">Manifest</Link>
+          </li> */}
+          {isLoggedIn && (
+            <li className="links">
+              <Link to="/manifest">Manifest</Link>
+            </li>
+          )}
+          {/* <li className="links">
+            <Link to="/faq">FAQ</Link>
+          </li> */}
           <div className="line"></div>
 
           {isLoggedIn && (
@@ -95,10 +109,10 @@ export default function Navbar(props) {
         </ul>
       </div>
       <div className="social">
-        <Link to="/cart">
+        {/* <Link to="/cart">
           <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           {"\u00A0"} Cart {"\u00A0"}
-        </Link>
+        </Link> */}
         {loggedInOrNotDesktop}
       </div>
     </nav>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
-import img from "../../assets/images/about1.jpg";
+import img from "../../assets/images/cargo6.jpg";
 
 export default function AboutUs(props) {
   let navbar_closer = props.navbar_closer;
@@ -8,8 +8,8 @@ export default function AboutUs(props) {
   return (
     <div onClick={navbar_closer}>
       <div className="about_us_info">
-        <div className="about_us_nav_display">Home &gt; About Us</div>
-        {/* <div className="smocked_tops_text_display">Smocked Tops</div>  */}
+        {/* <div className="about_us_nav_display">Home &gt; About Us</div> */}
+        <div className="about_us_nav_display">About Us</div>
       </div>
 
       <div className="about_us_first_half">

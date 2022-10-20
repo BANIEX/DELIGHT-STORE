@@ -7,7 +7,10 @@ export const Policy = (props) => {
   return (
     <div onClick={navbar_closer}>
       <div className="company_policy_info">
-        <div className="company_policy_nav_display">Home &gt; Company Policy</div>
+        {/* <div className="company_policy_nav_display">Home &gt; Company Policy</div> */}
+        <div className="company_policy_nav_display">
+           Company Policy
+        </div>
       </div>
 
       <div className="company_policy_info_wrapper">

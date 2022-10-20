@@ -13,6 +13,8 @@ const SignIn = (props) => {
   const userDataHandler = props.userDataHandler;
   const isLoggedInHandler = props.isLoggedInHandler;
   const cartFromServer = props.cartFromServer;
+  let navbar_closer = props.navbar_closer;
+
 
   const override: CSSProperties = {
     display: "block",
@@ -90,7 +92,7 @@ const SignIn = (props) => {
   };
 
   return (
-    <>
+    <div onClick={navbar_closer}>
       <div className="login-page">
         <div className="form">
           <div>{message}</div>
@@ -116,7 +118,7 @@ const SignIn = (props) => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

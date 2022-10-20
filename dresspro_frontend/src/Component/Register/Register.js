@@ -4,7 +4,10 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { SpinnerCircularFixed } from "spinners-react";
 
-const Register = () => {
+const Register = (props) => {
+  let navbar_closer = props.navbar_closer;
+
+
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -121,7 +124,7 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div onClick={navbar_closer}>
       <div className="login-page">
         <div className="form">
           <p>{message}</p>
@@ -149,7 +152,7 @@ const Register = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

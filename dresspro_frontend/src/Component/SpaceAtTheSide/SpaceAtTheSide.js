@@ -26,6 +26,7 @@ import AdminPage from "../AdminPage/AdminPage";
 import Register from "../Register/Register";
 import Verify from "../Verify/Verify";
 import Manifest from "../Manifest/Manifest";
+import Faq from "../Faq/Faq";
 
 export default function SpaceAtTheSide() {
   const [dressProData, setDressProData] = useState([]);
@@ -318,7 +319,7 @@ export default function SpaceAtTheSide() {
         <Routes>
           {/* {cloth_route} */}
           {new_cloth_route}
-          <Route
+          {/* <Route
             path="/"
             element={
               <Home
@@ -327,20 +328,26 @@ export default function SpaceAtTheSide() {
                 navbar_closer={navbar_closer}
               />
             }
-          ></Route>
+          ></Route> */}
 
-          <Route
+          {/* <Route
             path="/customer"
             element={<CustomerReview navbar_closer={navbar_closer} />}
-          ></Route>
-          <Route
+          ></Route> */}
+          {/* <Route
             path="/about"
+            element={<AboutUs navbar_closer={navbar_closer} />}
+          ></Route> */}
+
+          <Route
+            path="/"
             element={<AboutUs navbar_closer={navbar_closer} />}
           ></Route>
           <Route
             path="/policy"
             element={<Policy navbar_closer={navbar_closer} />}
           ></Route>
+          {/* <Route path="/faq" element={<Faq />}></Route> */}
           <Route
             path="/cart"
             element={
@@ -362,13 +369,24 @@ export default function SpaceAtTheSide() {
                 userDataHandler={userDataHandler}
                 isLoggedInHandler={isLoggedInHandler}
                 cartFromServer={cartFromServer}
+                navbar_closer={navbar_closer}
               />
             }
           ></Route>
-          <Route path="/register" element={<Register />}></Route>
+          <Route
+            path="/register"
+            element={<Register navbar_closer={navbar_closer} />}
+          ></Route>
+
           <Route
             path="/manifest"
-            element={<Manifest isLoggedIn={isLoggedIn} userData={userData} />}
+            element={
+              <Manifest
+                isLoggedIn={isLoggedIn}
+                userData={userData}
+                navbar_closer={navbar_closer}
+              />
+            }
           ></Route>
           <Route path="/admin/login" element={<AdminPage />}></Route>
           <Route path="/verify" element={<Verify />}></Route>
