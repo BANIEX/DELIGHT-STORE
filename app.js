@@ -1,6 +1,6 @@
 // import path from "path";
-const path = require("path");
-const __dirname = path.resolve()
+// const path = require("path");
+// const __dirname = path.resolve()
 
 const express = require("express");
 
