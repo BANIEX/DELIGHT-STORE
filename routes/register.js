@@ -57,7 +57,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
     res.send({
       message: "User already registered, can proceed to sign in",
       data: [],
-      code: "already-registered"
+      code: "previously-registered"
     });
   } else {
     let hashedPassword = await bcryptjs.hash(password, 12);
