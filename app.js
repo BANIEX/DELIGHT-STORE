@@ -50,9 +50,9 @@ app.use("/checkout_store", checkout_storeRouter);
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("dresspro_frontend/build"));
 
-  app.get( "*", (req,res) =>{
-    res.sendFile(path.join(__dirname, "dresspro_frontend", "build", "index.html"))
-  });
+  // app.get( "*", (req,res) =>{
+  //   res.sendFile(path.join(__dirname, "dresspro_frontend", "build", "index.html"))
+  // });
 
 }
 // else{
