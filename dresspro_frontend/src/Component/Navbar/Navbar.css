@@ -48,7 +48,8 @@ nav {
 .links a {
   margin: 2px 11px;
   text-decoration: none;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+  font-size: 14px;
 }
 
 .social {
@@ -65,7 +66,10 @@ nav {
 }
 
 .dropbtn {
-  background-color: palevioletred;
+  /* background-color: palevioletred; */
+  background-color: rgb(15,173,183);
+  /* rgb(71,207,115 */
+  /* /rgb(15,173,183), 1 */
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -116,12 +120,14 @@ nav a:visited {
 
 /* mouse over link */
 nav a:hover {
-  color: palevioletred;
+  /* color: palevioletred; */
+  color: rgb(15,173,183);
 }
 
 /* selected link */
 nav a:active {
-  color: palevioletred;
+  /* color: palevioletred; */
+  color: rgb(15,173,183);
   /* border-top: 2px solid blue; */
 }
 .mobile{
@@ -131,6 +137,9 @@ nav a:active {
 .mobile-name{
   display: none;
 }
+.mobile-logout{
+    display: none;
+  }
 
 /* MEDIA QUERIES FOR SMALLER SCREEN OF NAVBAR  */
 @media screen and (max-width: 400px) {}
@@ -139,7 +148,7 @@ nav a:active {
   nav {
     flex-direction: column;
     background: white;
-    height: max-content;
+    height: 60px;
   }
 
   .brand_and_toggle {
@@ -156,9 +165,10 @@ nav a:active {
   /* .brand_name{font-size: 1.2rem;} */
 
   .links_div {
-    width: 100%;
+    width: 70%;
     position: absolute;
     /* top: -200px; */
+    ;
     top: 39px;
     left: -700px;
 
@@ -167,8 +177,18 @@ nav a:active {
      /* background: palevioletred; */
          
     /* background: #b3afc0; */
-    background: rgb(160, 110, 127);
+    /* background: rgb(160, 110, 127); */
+    /* background: rgb(15,173,183); */
+    background: white;
+    /* box-shadow:  2px -0.01px 5px  #888888; */
+    box-shadow: 1px 40px 80px #808080
 
+  }
+  .links_div ul{
+    height: 100vh;
+    text-align: left;
+    color: black;
+    /* padding-left: 32px; */
   }
 
   .links_div.show {
@@ -182,6 +202,7 @@ nav a:active {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     /* background: rgb(85, 79, 79); */
     /* color: white; */
   }
@@ -189,7 +210,7 @@ nav a:active {
   .links {
     display: block;
     width: 100%;
-    padding: 5px 0;
+    padding: 6px 0;
     font-weight: 500;
     /* border: 2px solid green; */
   }
@@ -205,8 +226,11 @@ nav a:active {
   }
 
   .links_div ul li a {
-    color: white;
+    color: black;
 
+  }
+
+  .links_div ul li{
 
   }
   .mobile{
@@ -216,7 +240,23 @@ nav a:active {
   }
   .mobile-name{
     display: block;
+    padding-left: 10px;
+    margin: 20px 0 0;
+    border-bottom: 20px;
+    /* border:  2px 5px  solid black; */
+    /* border-bottom: 2px; */
+    border-width: 0 0px 0px 12px;
+    font-size: 20px;
+    font-weight: 900;
   }
+  .line{
+    border-bottom: 0.00000001px solid black;
+    width: 100%;
+    height: 00.00000001px;
+    margin-top: 20px;
+    opacity: 0.2;
+  }
+  
 }
 
 /* END OF NAVBAR */

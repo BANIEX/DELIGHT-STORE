@@ -67,6 +67,7 @@ const SignIn = (props) => {
             cartFromServer(user_data.cart_data);
           }
           // window.location.href = "http://localhost:3000";
+          navigate("/")
         }
         if (response_code === "Wrong-details") {
           setLoading(false);

@@ -25,6 +25,7 @@ import SignIn from "../SignIn/SignIn";
 import AdminPage from "../AdminPage/AdminPage";
 import Register from "../Register/Register";
 import Verify from "../Verify/Verify";
+import Manifest from "../Manifest/Manifest";
 
 export default function SpaceAtTheSide() {
   const [dressProData, setDressProData] = useState([]);
@@ -342,6 +343,10 @@ export default function SpaceAtTheSide() {
             }
           ></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route
+            path="/manifest"
+            element={<Manifest isLoggedIn={isLoggedIn} userData={userData} />}
+          ></Route>
 
           <Route path="/admin/login" element={<AdminPage />}></Route>
           <Route path="/verify" element={<Verify />}></Route>

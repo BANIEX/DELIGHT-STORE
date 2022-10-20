@@ -16,7 +16,7 @@ export default function Navbar(props) {
   } else {
     loggedInOrNot = (
       <Link to="/sign_in" className="links mobile-name">
-        SignIn
+        Sign in
       </Link>
     );
   }
@@ -69,6 +69,8 @@ export default function Navbar(props) {
           {/* <li className="links mobile-name">
             <h2>Hi OLABANJI</h2>
           </li> */}
+          <div className="line"></div>
+
           <li className="links">
             <Link to="/">Products</Link>
           </li>
@@ -81,10 +83,14 @@ export default function Navbar(props) {
           <li className="links">
             <Link to="/policy">Company Policy</Link>
           </li>
+          <div className="line"></div>
+
           {isLoggedIn && (
-            <Link to="/" className="links mobile-name" onClick={signOutHandler}>
-              Sign Out
-            </Link>
+            <li className="links mobile-logout">
+              <Link to="/" onClick={signOutHandler}>
+                Sign Out
+              </Link>
+            </li>
           )}
         </ul>
       </div>
