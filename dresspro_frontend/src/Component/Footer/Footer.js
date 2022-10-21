@@ -8,14 +8,13 @@ export default function Footer() {
         <div className="footer_top">
           <div className="footer_one">
             <div className="footer_about">
-              <div className="footer_about_heading">ABOUT</div>
+              <div className="footer_about_heading" >ABOUT</div>
               <div className="footer_about_story">
-                DRESS PRO is a fashion brand that provides ladies with
-                customized sexy outfit to help them feel confident and stand out
+                DELIGHT Express Cargo helps you to send and receive packages in and out of the country to anywhere in thw world at very affordable rates 
               </div>
             </div>
           </div>
-          <div className="footer_two">
+          {/* <div className="footer_two">
             <div className="footer_categories">
               <div className="footer_categories_heading">CATEGORIES</div>
               <div className="footer_categories_group_links">
@@ -61,7 +60,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="footer_bottom">
           <div className="footer_three">
@@ -72,11 +71,11 @@ export default function Footer() {
               Copyright © 2022 All Rights Reserved by
               <strong>
                 <a
-                  href="https://www.instagram.com/banjibaniex/"
+                  href="https://www.instagram.com/delightexpresscargo/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  Dress Pro
+                  Delight Express
                 </a>
               </strong>
             </div>
@@ -85,7 +84,7 @@ export default function Footer() {
                 <div className="footer_socialmedia_specific_links">
                   <div className="footer_instagram">
                     <a
-                      href="https://www.instagram.com/dress.pro_"
+                      href="https://www.instagram.com/delightexpresscargo"
                       target="_blank"
                       rel="noreferrer noopener"
                     >

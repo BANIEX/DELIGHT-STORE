@@ -38,20 +38,12 @@ export default function AboutUs(props) {
             With our dedicated team of professionals and years of experience
             handling packages. We make sure your packages are handled with the
             best of care, the documentation is well handled and our
-            communication proces is very clean. We are also very timely woth
-            package delivery. We are honest and trustworthy and leave no room
+            communication proces is very clean.  We are honest and trustworthy and leave no room
             for complacency. We are keen on giving our custimesrs the best
             service they deserve. Over the years we have handle over two
             thousand pacakages sent and receive acrosst the borders of numerous
             countries in the globe, expanding and making sure our customers get
-            the best of services at the very best rate in the shortest time.We
-            have also taken the time to eliminate third party communication that
-            slows down buying processes and other shenanigans by integrating our
-            product store. We also take our client relationship and feedbacks
-            seriously between and this why we have recommendation rate of as
-            high as sixty person. This process ensures that we are on top of our
-            game, day and night and that we are always DELIGHTED to serve our
-            customers.
+            the best of services at the very best rate in the shortest time.
           </div>
         </div>
       </div>
