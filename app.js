@@ -2,6 +2,8 @@
 const path = require("path");
 // const __dirname = path.resolve()
 
+var sslRedirect = require("heroku-ssl-redirect");
+
 const express = require("express");
 
 
@@ -20,6 +22,7 @@ const mongodbSessionStore = new mongodbSession({
 
 const app = express();
 
+app.use(sslRedirect());
 app.use(
   session({
     secret: "whateverishereisbeautifulandblessedinthenameofJesusAmenMovingon",
@@ -39,6 +42,8 @@ let cart_storeRouter = require("./routes/cart_store");
 let admin_sign_inRouter = require("./routes/admin_sign_in");
 let verifyRouter = require("./routes/verify");
 let checkout_storeRouter = require("./routes/checkout_store")
+
+
 
 app.use(cors());
 app.use(express.json());
