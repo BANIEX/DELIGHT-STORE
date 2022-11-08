@@ -2,7 +2,7 @@
 const path = require("path");
 // const __dirname = path.resolve()
 
-var sslRedirect = require("heroku-ssl-redirect");
+var sslRedirect = require("heroku-ssl-redirect").default;
 
 const express = require("express");
 
