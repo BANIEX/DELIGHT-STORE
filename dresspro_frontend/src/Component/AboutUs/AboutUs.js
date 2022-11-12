@@ -16,8 +16,9 @@ export default function AboutUs(props) {
         <div className="about_us_first_half_header">ABOUT US</div>
         <div className="about_us_first_half_content">
           Delight Express Cargo is a Cargo and logistics company. We help our
-          customers send and receive goods and packages in and out of the
-          country at the best rate possible. We also make sure your goods are delivered as swift as possible
+          customers send and receive consignment in and out of the
+          country.We offer a reliable,cost effective alternative for your personal effects and edibles. 
+          We also make sure your goods are delivered as swift as possible
         </div>
         <div className="about_us_first_half_image">
           <img src={img} alt="dress_pro" />
@@ -33,6 +34,7 @@ export default function AboutUs(props) {
             <div className="about_us_second_half_left_image_container"></div>
           </div>
           <div className="about_us_second_half_right">
+            Delight Express Cargo is one of the leading logistics company in Nigeria.
             With our dedicated team of professionals and years of experience
             handling packages. We make sure your packages are handled with the
             best of care, the documentation is well handled and our
