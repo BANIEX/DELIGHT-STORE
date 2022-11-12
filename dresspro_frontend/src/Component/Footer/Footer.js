@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="footer_about">
               <div className="footer_about_heading" >ABOUT</div>
               <div className="footer_about_story">
-                DELIGHT Express Cargo helps you to send and receive packages in and out of the country to anywhere in thw world at very affordable rates 
+                Delight Express Cargo helps you to send and receive packages in and out of the country to anywhere in the world at very affordable rates 
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  Delight Express
+                  {" "}Delight Express
                 </a>
               </strong>
             </div>
