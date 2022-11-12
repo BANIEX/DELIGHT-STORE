@@ -6,6 +6,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useBeforeunload } from "react-beforeunload";
 import Specific from "../Specific/Specific";
+import HomeMain from "../HomeMain/HomeMain";
 import Cart from "../Cart/Cart";
 
 import Navbar from "../Navbar/Navbar";
@@ -343,6 +344,11 @@ export default function SpaceAtTheSide() {
             path="/"
             element={<AboutUs navbar_closer={navbar_closer} />}
           ></Route>
+
+          {/* <Route
+            path="/"
+            element={<HomeMain navbar_closer={navbar_closer} />}
+          ></Route> */}
           <Route
             path="/policy"
             element={<Policy navbar_closer={navbar_closer} />}

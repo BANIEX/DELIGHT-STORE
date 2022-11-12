@@ -17,9 +17,7 @@ export default function AboutUs(props) {
         <div className="about_us_first_half_content">
           Delight Express Cargo is a Cargo and logistics company. We help our
           customers send and receive goods and packages in and out of the
-          country at the best rate posiible. We also help save customers save
-          stress by shopping from our product store and sending the goods to
-          their destination countries
+          country at the best rate posiible. We also make sure your goods are dellivered as swift as possible
         </div>
         <div className="about_us_first_half_image">
           <img src={img} alt="dress_pro" />
@@ -39,9 +37,9 @@ export default function AboutUs(props) {
             handling packages. We make sure your packages are handled with the
             best of care, the documentation is well handled and our
             communication proces is very clean.  We are honest and trustworthy and leave no room
-            for complacency. We are keen on giving our custimesrs the best
-            service they deserve. Over the years we have handle over two
-            thousand pacakages sent and receive acrosst the borders of numerous
+            for complacency. We are keen on giving our customers the best
+            services they deserve. Over the years we have handled over fifty
+            thousand pacakages sent and receive across the borders of numerous
             countries in the globe, expanding and making sure our customers get
             the best of services at the very best rate in the shortest time.
           </div>

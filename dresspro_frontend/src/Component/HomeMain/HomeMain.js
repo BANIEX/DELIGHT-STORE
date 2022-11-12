@@ -1,7 +1,7 @@
 import React from 'react'
 import "./HomeMain.css"
-import plane from "../../assets/images/plane.png"
-import container from "../../assets/images/container.png";
+// import plane from "../../assets/images/plane.png"
+// import container from "../../assets/images/container.png";
 
 
 const HomeMain = () => {
@@ -18,7 +18,7 @@ const HomeMain = () => {
           </div>
         </div>
         <div className="home_first_right">
-          <img src={container} alt="delight_image" />
+          <img  alt="delight_image" />
         </div>
       </div>
       <div className="home_second">
