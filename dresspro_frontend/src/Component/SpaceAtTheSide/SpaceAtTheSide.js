@@ -28,6 +28,7 @@ import Register from "../Register/Register";
 import Verify from "../Verify/Verify";
 import Manifest from "../Manifest/Manifest";
 import Faq from "../Faq/Faq";
+import Contact from "../Contact/Contact";
 
 export default function SpaceAtTheSide() {
   const [dressProData, setDressProData] = useState([]);
@@ -343,6 +344,11 @@ export default function SpaceAtTheSide() {
           <Route
             path="/"
             element={<AboutUs navbar_closer={navbar_closer} />}
+          ></Route>
+
+          <Route
+            path="/contact"
+            element={<Contact navbar_closer={navbar_closer} />}
           ></Route>
 
           {/* <Route

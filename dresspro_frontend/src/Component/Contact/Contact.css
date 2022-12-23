@@ -1,0 +1,70 @@
+.contact-firstdiv{
+  /* background: gray; */
+  background: url("/src/assets/images/plane=3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 1;
+  /* object-fit: cover; */
+  height: 200px;
+}
+.contact-seconddiv{
+  font-size: 2.8125rem;
+  text-align: center;
+  margin: 40px 0;
+  font-weight: 900;
+}
+.contact-thirddiv{
+  display: flex;
+  font-weight: 900;
+  margin-bottom: 5.125rem;
+
+}
+
+.contact-address{
+  width: 40%;
+  /* text-align: center; */
+  margin: 0 auto;
+}
+.addresstext-div, .contact-openinghrs{
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.address-div, .phone-div, .email-div {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid black;
+}
+
+.address-div-span, .phone-div-span, .email-div-span {
+  font-weight: 900;
+  /* font-size: larger; */
+}
+.contact-openinghrs{
+  width: 50%;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 700px) {
+
+  .contact-thirddiv{
+  display: flex;
+  flex-direction: column;
+}
+.contact-address{
+  width: 90%;
+  /* text-align: center; */
+  margin: 0 auto;
+
+  margin-bottom: 20px;
+}
+
+.address-div, .phone-div, .email-div {
+  padding: 2.0rem 0;
+  border-bottom: 1px solid black;
+}
+
+
+}
+
