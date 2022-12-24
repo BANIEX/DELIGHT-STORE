@@ -48,6 +48,13 @@
 
 @media screen and (max-width: 700px) {
 
+  .contact-seconddiv{
+  font-size: 2rem;
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 700;
+}
+
   .contact-thirddiv{
   display: flex;
   flex-direction: column;

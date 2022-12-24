@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Contact.css"
 
-const Contact = () => {
+const Contact = (props) => {
+
+  let navbar_closer = props.navbar_closer;
   return (
-    <div>
+    <div onClick={navbar_closer}>
       <div className="contact-firstdiv"></div>
       <div className="contact-seconddiv">Our Locations</div>
       <div className="contact-thirddiv">
