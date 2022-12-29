@@ -321,8 +321,8 @@ export default function SpaceAtTheSide() {
         <Routes>
           {/* {cloth_route} */}
           {new_cloth_route}
-          {/* <Route
-            path="/"
+          <Route
+            path="/store"
             element={
               <Home
                 dressProData={dressProData}
@@ -330,7 +330,7 @@ export default function SpaceAtTheSide() {
                 navbar_closer={navbar_closer}
               />
             }
-          ></Route> */}
+          ></Route>
 
           {/* <Route
             path="/customer"
