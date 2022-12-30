@@ -38,8 +38,10 @@ export default function Product(props) {
   //   );
   // })
 
-  let new_cloth_div = dressProData.map((cloth_object, index) => {
-    let cloth_name_id = cloth_object.name.replace(/\s+/g, "").toLowerCase();
+  let all_products = dressProData.map((product_category, index) => {
+    let product_category_id = product_category.name.replace(/\s+/g, "").toLowerCase();
+    let product_category_products = product_category.products
+    let product_category_image = product_category_products[0].product_image;
 
     return (
       <>
@@ -47,13 +49,20 @@ export default function Product(props) {
           id={"swiper2-slide" + index}
           onMouseOver={second_layer_hover}
           onMouseLeave={second_layer_hover_remove}
+          style={{
+            backgroundImage: "url(" + product_category_image + ")",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+          // style={{ background: "" }}
         >
           <div className="on_hover_display">
             <div className="middle_hover">
               {/* <Link to="">Order Now</Link> */}
-              <a href={"/" + cloth_name_id}>Order Now</a>
+              <a href={"/" + product_category_id}>See More</a>
             </div>
-            <div className="down_hover">{cloth_object.name}</div>
+            <div className="down_hover">{product_category.name}</div>
           </div>
         </SwiperSlide>
       </>
@@ -102,7 +111,7 @@ export default function Product(props) {
         </SwiperSlide> */}
 
         {/* {cloth_divs} */}
-        {new_cloth_div}
+        {all_products}
       </Swiper>
     </>
   );

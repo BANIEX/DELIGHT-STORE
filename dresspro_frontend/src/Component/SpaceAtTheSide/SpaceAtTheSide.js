@@ -43,6 +43,8 @@ export default function SpaceAtTheSide() {
     is_user_verified: false,
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [location, setLocation] = useState("canada");
+  const [locationPrice, setLocationPrice] = useState(2000);
   const navigate = useNavigate();
 
   
@@ -57,6 +59,23 @@ export default function SpaceAtTheSide() {
     borderColor: "rgb(160, 110, 127)",
     zIndex: "60"
   };
+
+
+  const locationChanger = (chosenLocation) => {
+    if (chosenLocation == "canada"){
+      setLocation("canada")
+      setLocationPrice(2000);
+    }
+    if (chosenLocation == "uk") {
+      setLocation("uk");
+      setLocationPrice(4000);
+    }
+    if (chosenLocation == "usa") {
+      setLocation("usa");
+      setLocationPrice(5000);
+    }
+
+  }
 
   const isCartOpenHandler = () => {
     if (cartData.length === 0) {
@@ -271,18 +290,21 @@ export default function SpaceAtTheSide() {
     );
   }
 
-  let new_cloth_route = dressProData.map((cloth_object, index) => {
-    let { name } = cloth_object;
-    let cloth_name_id = name.replace(/\s+/g, "").toLowerCase();
+  let new_cloth_route = dressProData.map((product_category, index) => {
+    let { name } = product_category;
+    let product_category_name_id = name.replace(/\s+/g, "").toLowerCase();
     return (
       <Route
-        path={"/" + cloth_name_id}
+        path={"/" + product_category_name_id}
         key={index}
         element={
           <Section
-            cloth_object={cloth_object}
+            product_category={product_category}
             cartData={cartData}
             addToCartHandler={addToCartHandler}
+            location={location}
+            locationPrice={locationPrice}
+            locationChanger={locationChanger}
           />
         }
       ></Route>
@@ -371,6 +393,8 @@ export default function SpaceAtTheSide() {
                 removeFromCart={removeFromCart}
                 isLoggedIn={isLoggedIn}
                 userData={userData}
+                location={location}
+                locationPrice={locationPrice}
               />
             }
           ></Route>
