@@ -101,9 +101,13 @@ const Section = (props) => {
               onClick={(event) => {
                 addToCartHandler(
                   event,
-                  product_id,
                   product_name,
-                  product_price
+                  product_price,
+                  product_weight,
+                  product_volume,
+                  product_image,
+                  product_no_of_pieces,
+                  product_id
                 );
               }}
             >

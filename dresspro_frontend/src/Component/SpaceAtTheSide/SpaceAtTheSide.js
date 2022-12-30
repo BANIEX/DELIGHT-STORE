@@ -65,17 +65,83 @@ export default function SpaceAtTheSide() {
     if (chosenLocation == "canada"){
       setLocation("canada")
       setLocationPrice(2000);
+       localforage
+         .setItem("location", "canada")
+         .then(function () {
+           // return localforage.getItem("cartData");
+         })
+         .then(function (value) {
+           // we got our value
+         })
+         .catch(function (err) {
+           // we got an error
+         });
+
     }
     if (chosenLocation == "uk") {
       setLocation("uk");
       setLocationPrice(4000);
+       localforage
+         .setItem("location", "uk")
+         .then(function () {
+           // return localforage.getItem("cartData");
+         })
+         .then(function (value) {
+           // we got our value
+         })
+         .catch(function (err) {
+           // we got an error
+         });
+
     }
     if (chosenLocation == "usa") {
       setLocation("usa");
       setLocationPrice(5000);
+       localforage
+         .setItem("location", "usa")
+         .then(function () {
+           // return localforage.getItem("cartData");
+         })
+         .then(function (value) {
+           // we got our value
+         })
+         .catch(function (err) {
+           // we got an error
+         });
+
     }
 
   }
+
+
+  useEffect(() => {
+    // declare the data fetching function
+    const locationInfo = async () => {
+      const location = await localforage.getItem("location");
+      if (location) {
+        locationChanger(location);
+      }
+      else{
+         localforage
+           .setItem("location", "canada")
+           .then(function () {
+             // return localforage.getItem("cartData");
+           })
+           .then(function (value) {
+             // we got our value
+           })
+           .catch(function (err) {
+             // we got an error
+           });
+
+      }
+    };
+
+    // call the function
+    locationInfo()
+      // make sure to catch any error
+      .catch(console.error);
+  }, []);
 
   const isCartOpenHandler = () => {
     if (cartData.length === 0) {
@@ -207,19 +273,19 @@ export default function SpaceAtTheSide() {
         // we got an error
       });
   }, [cartData]);
-  useEffect(() => {
-    if (cartData.length > 0) {
-      let cartSum = cartData.reduce(
-        (previousValue, currentValue) =>
-          previousValue + currentValue.cloth_price * currentValue.no_of_pieces,
-        0
-      );
-      console.log(cartSum);
-      setCartTotal(cartSum);
-    }
+  // useEffect(() => {
+  //   if (cartData.length > 0) {
+  //     let cartSum = cartData.reduce(
+  //       (previousValue, currentValue) =>
+  //         previousValue + currentValue.cloth_price * currentValue.no_of_pieces,
+  //       0
+  //     );
+  //     console.log(cartSum);
+  //     setCartTotal(cartSum);
+  //   }
 
-    console.log(cartData);
-  }, [cartData]);
+  //   console.log(cartData);
+  // }, [cartData]);
 
   const addToSpecificCart = (cloth_image) => {
     console.log(cloth_image);
@@ -255,19 +321,22 @@ export default function SpaceAtTheSide() {
     setCartData(newCart);
   };
 
-  const addToCartHandler = (event, cloth_image, cloth_name, cloth_price) => {
+  const addToCartHandler = (event, product_name, product_price, product_weight, product_volume, product_image, product_no_of_pieces, product_id) => {
     let object = {
-      cloth_name,
-      cloth_image,
-      cloth_price,
-      no_of_pieces: 1,
+      product_name,
+      product_price,
+      product_weight,
+      product_volume,
+      product_image,
+      product_no_of_pieces,
+      product_id,
     };
     if (event.target.innerText === "ADD TO CART") {
       setCartData([...cartData, object]);
       event.target.innerText = "REMOVE FROM CART";
     } else {
       let newCartData = cartData.filter(
-        (specificCartObject) => specificCartObject.cloth_image !== cloth_image
+        (specificCartObject) => specificCartObject.product_id !== product_id
       );
       event.target.innerText = "ADD TO CART";
       setCartData(newCartData);
