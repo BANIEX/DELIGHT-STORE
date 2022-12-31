@@ -80,7 +80,6 @@
   .about_us_first_half_content{
     width: 100%;
     font-size: medium;
-    font-weight: 500;
   }
   .about_us_second_half_bottom {
     flex-direction: column;
@@ -88,7 +87,6 @@
     height: -moz-max-content;
     height: max-content;
     font-size: medium;
-    font-weight: 500;
   }
   .about_us_second_half_bottom .about_us_second_half_left {
     width: 100%;

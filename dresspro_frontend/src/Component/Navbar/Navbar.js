@@ -89,6 +89,9 @@ export default function Navbar(props) {
           {/* <li className="links">
             <Link to="/manifest">Manifest</Link>
           </li> */}
+          <li className="links">
+            <Link to="/contact">Contact Us</Link>
+          </li>
           {isLoggedIn && (
             <li className="links">
               <Link to="/manifest">Manifest</Link>
@@ -97,9 +100,7 @@ export default function Navbar(props) {
           {/* <li className="links">
             <Link to="/faq">FAQ</Link>
           </li> */}
-          <li className="links">
-            <Link to="/contact">Contact Us</Link>
-          </li>
+
           <div className="line"></div>
 
           {isLoggedIn && (

@@ -64,15 +64,15 @@ export default function SpaceAtTheSide() {
     } else {
       setIsCartOpen(true);
       if(isLoggedIn){
-        let feedback = axios
-          .post("/cart_store", cartData)
-          .then((response) => {
-            let result = response.data;
-            console.log(result);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        // let feedback = axios
+        //   .post("/cart_store", cartData)
+        //   .then((response) => {
+        //     let result = response.data;
+        //     console.log(result);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //   });
 
       }
       
