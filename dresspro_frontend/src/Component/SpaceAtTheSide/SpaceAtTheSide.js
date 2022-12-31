@@ -149,15 +149,15 @@ export default function SpaceAtTheSide() {
     } else {
       setIsCartOpen(true);
       if(isLoggedIn){
-        let feedback = axios
-          .post("/cart_store", cartData)
-          .then((response) => {
-            let result = response.data;
-            console.log(result);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        // let feedback = axios
+        //   .post("/cart_store", cartData)
+        //   .then((response) => {
+        //     let result = response.data;
+        //     console.log(result);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //   });
 
       }
       
@@ -273,47 +273,46 @@ export default function SpaceAtTheSide() {
         // we got an error
       });
   }, [cartData]);
-  // useEffect(() => {
-  //   if (cartData.length > 0) {
-  //     let cartSum = cartData.reduce(
-  //       (previousValue, currentValue) =>
-  //         previousValue + currentValue.cloth_price * currentValue.no_of_pieces,
-  //       0
-  //     );
-  //     console.log(cartSum);
-  //     setCartTotal(cartSum);
-  //   }
+  useEffect(() => {
+    if (cartData.length > 0) {
+      let cartSum = cartData.reduce(
+        (previousValue, currentValue) =>
+          previousValue + ( + currentValue.product_price + locationPrice)  * currentValue.product_no_of_pieces,
+        0
+      );
+      console.log(cartSum);
+      setCartTotal(cartSum);
+    }
 
-  //   console.log(cartData);
-  // }, [cartData]);
+    console.log(cartData);
+  }, [cartData, locationPrice]);
 
-  const addToSpecificCart = (cloth_image) => {
-    console.log(cloth_image);
+  const addToSpecificCart = (product_id) => {
     let foundObject = cartData.find(
-      (cartDataObject) => cartDataObject.cloth_image === cloth_image
+      (cartDataObject) => cartDataObject.product_id === product_id
     );
     console.log(foundObject);
     let newCart = cartData.map((cartItem) => {
       if (cartItem === foundObject) {
-        return { ...cartItem, no_of_pieces: cartItem.no_of_pieces + 1 };
+        return { ...cartItem, product_no_of_pieces: cartItem.product_no_of_pieces + 1 };
       }
       return cartItem;
     });
     setCartData(newCart);
   };
 
-  const removeFromSpecificCart = (cloth_image) => {
+  const removeFromSpecificCart = (product_id) => {
     let foundObject = cartData.find(
-      (cartDataObject) => cartDataObject.cloth_image === cloth_image
+      (cartDataObject) => cartDataObject.product_id === product_id
     );
     let newCart = cartData.map((cartItem) => {
       if (cartItem === foundObject) {
         return {
           ...cartItem,
-          no_of_pieces:
-            cartItem.no_of_pieces === 0
-              ? cartItem.no_of_pieces
-              : cartItem.no_of_pieces - 1,
+          product_no_of_pieces:
+            cartItem.product_no_of_pieces === 0
+              ? cartItem.product_no_of_pieces
+              : cartItem.product_no_of_pieces - 1,
         };
       }
       return cartItem;
@@ -321,7 +320,7 @@ export default function SpaceAtTheSide() {
     setCartData(newCart);
   };
 
-  const addToCartHandler = (event, product_name, product_price, product_weight, product_volume, product_image, product_no_of_pieces, product_id) => {
+  const addToCartHandler = (event, product_name, product_price, product_weight, product_volume, product_image, product_no_of_pieces, product_id, product_description) => {
     let object = {
       product_name,
       product_price,
@@ -330,6 +329,7 @@ export default function SpaceAtTheSide() {
       product_image,
       product_no_of_pieces,
       product_id,
+      product_description
     };
     if (event.target.innerText === "ADD TO CART") {
       setCartData([...cartData, object]);
@@ -464,6 +464,7 @@ export default function SpaceAtTheSide() {
                 userData={userData}
                 location={location}
                 locationPrice={locationPrice}
+                locationChanger={locationChanger}
               />
             }
           ></Route>

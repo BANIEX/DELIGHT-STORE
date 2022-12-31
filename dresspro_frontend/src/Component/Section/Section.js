@@ -107,7 +107,8 @@ const Section = (props) => {
                   product_volume,
                   product_image,
                   product_no_of_pieces,
-                  product_id
+                  product_id,
+                  product_description
                 );
               }}
             >

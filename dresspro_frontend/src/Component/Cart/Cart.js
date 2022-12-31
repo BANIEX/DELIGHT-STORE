@@ -13,7 +13,11 @@ const Cart = (props) => {
   let removeFromSpecificCart = props.removeFromSpecificCart;
   let removeFromCart = props.removeFromCart;
   let isLoggedIn = props.isLoggedIn;
-  let userData = props.userData 
+  let userData = props.userData;
+
+  let location = props.location;
+  let locationPrice = props.locationPrice;
+  let locationChanger = props.locationChanger;
 
   console.log(userData)
 
@@ -161,11 +165,13 @@ const Cart = (props) => {
       // console.log("hello");
     };
 
-    let cloth_name = cartObject.cloth_name;
-    let cloth_image = cartObject.cloth_image;
-    let no_of_pieces = cartObject.no_of_pieces;
-    let cloth_price = cartObject.cloth_price;
-    let cloth_name_unspaced = cloth_name.replace(/\s+/g, "").toLowerCase();
+    let product_name = cartObject.product_name;
+    let product_image = cartObject.product_image;
+    let product_no_of_pieces = cartObject.product_no_of_pieces;
+    let product_id = cartObject.product_id
+    let product_price = cartObject.product_price;
+    let product_description = cartObject.product_description;
+    // let product_name_unspaced = product_name.replace(/\s+/g, "").toLowerCase();
 
     return (
       <div className="cart-specific" key={index}>
@@ -173,17 +179,17 @@ const Cart = (props) => {
         <div className="cart-specific-top">
           <div className="cart-specific-top-left">
             <div className="cart-specific-top-left-content">
-              <img className="cart-img" alt="cart-img" src={cloth_image}></img>
+              <img className="cart-img" alt="cart-img" src={product_image}></img>
               {/* <div className="cart-name">{cloth_name}</div> */}
               {/* <div className="cart-name">Yellow Garri</div> */}
               <div className="cart-name">
-                <span>Yellow Garri</span>
+                <span>{product_name}</span>
                 <br/>
-                <span>Crunchy yellow garri to enjoy your life</span>
+                <span>{product_description}</span>
               </div>
             </div>
           </div>
-          <div className="cart-specific-top-right">N{cloth_price}</div>
+          <div className="cart-specific-top-right">N{+ product_price + locationPrice}</div>
         </div>
         <div className="cart-specific-bottom">
           <div>
@@ -199,15 +205,15 @@ const Cart = (props) => {
           <div>
             <span
               onClick={() => {
-                removeFromSpecificCart(cloth_image);
+                removeFromSpecificCart(product_id);
               }}
             >
               -
             </span>
-            <span>{no_of_pieces}</span>
+            <span>{product_no_of_pieces}</span>
             <span
               onClick={() => {
-                addToSpecificCart(cloth_image);
+                addToSpecificCart(product_id);
               }}
             >
               +
@@ -305,6 +311,11 @@ const Cart = (props) => {
             name="country"
             className="receiver"
             ref={receiverCountryRef}
+            value={location}
+            onChange={(event) => {
+              locationChanger(event.target.value);
+              console.log(event.target.value);
+            }}
           >
             <option value="canada">Canada</option>
             <option value="uk">United Kingdom</option>
