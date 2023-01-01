@@ -343,6 +343,11 @@ export default function SpaceAtTheSide() {
 
           <Route
             path="/"
+            element={<HomeMain navbar_closer={navbar_closer} />}
+          ></Route>
+
+          <Route
+            path="/about"
             element={<AboutUs navbar_closer={navbar_closer} />}
           ></Route>
 
@@ -351,10 +356,7 @@ export default function SpaceAtTheSide() {
             element={<Contact navbar_closer={navbar_closer} />}
           ></Route>
 
-          {/* <Route
-            path="/"
-            element={<HomeMain navbar_closer={navbar_closer} />}
-          ></Route> */}
+          
           <Route
             path="/policy"
             element={<Policy navbar_closer={navbar_closer} />}
