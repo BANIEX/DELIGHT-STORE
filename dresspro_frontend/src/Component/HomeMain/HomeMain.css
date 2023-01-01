@@ -54,6 +54,90 @@
 
 }
 
+.home_third{
+  /* border: 2px solid red; */
+  text-align: center;
+}
+
+.home_third_container{
+  width: 85%;
+  /* border: 2px solid yellow; */
+  margin: 0 auto;
+}
+
+.home_third_container_container{
+  /* margin: 20px 0; */
+}
+
+.home_third_container_text{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgba(0, 107, 104, 1);
+  margin: 30px 0;
+  margin-bottom: 50px;
+}
+
+.home_third_first{
+  display: flex;
+  height: 200px;
+  /* border: 2px solid green; */
+}
+.home_third_first_image_wrapper{
+  width: 30%;
+  /* border: 2px solid orange; */
+  background: rgb(15,173,183);
+
+}
+.home_third_first_image{
+  height: 95%;
+  background: url("/src/assets/images/air_shipment_desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.home_third_first_content{
+  width: 70%;
+  /* border: 2px solid orange; */
+}
+
+.home_third_first_content_subdiv{
+  width: 70%;
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 30px;
+}
+
+.home_third_first_content_primary{
+  font-weight: 800;
+  font-family: cursive;
+  padding: .3125rem;
+  padding-left: 0px;
+
+
+}
+.home_third_first_content_secondary{
+  font-weight: 100;
+  font-family: cursive;
+}
+
+
+.second{
+  flex-direction: row-reverse;
+}
+
+.second_image{
+  background: url("/src/assets/images/proper_inspection_desktop.png");
+
+
+}
+
+.third_image{
+  background: url("/src/assets/images/documentation_desktop.png");
+
+
+}
+
+
 @media screen and  (max-width: 700px){
 
   .home_first{
@@ -81,6 +165,39 @@
     font-size: .775rem;
 
   }
+
+  .home_third_container{
+  width: 100%;
+  }
+
+  .home_third_first_content_subdiv{
+  padding-top: 0px;
+  padding-left: 10px;
+  width: 100%;
+
+
+
+
+}
+
+.home_third_first_content_primary {
+    padding: 0px;
+}
+
+.home_third_first_content_secondary {
+    font-size: .9375rem;
+}
+
+.home_third_first_image_wrapper {
+    width: 40%;
+    height: 10.625rem;
+}
+
+.second{
+  flex-direction: row;
+}
+
+
   
 
 

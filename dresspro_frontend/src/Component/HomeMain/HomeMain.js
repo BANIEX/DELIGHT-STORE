@@ -26,7 +26,73 @@ const HomeMain = () => {
           <div className="home_second_button_subdiv">Contact Us</div>
         </div>
       </div>
-      <div className="home_third"></div>
+      <div className="home_third">
+        <div className="home_third_container">
+          <div className="home_third_container_text">
+            All shipping necessity you might have
+          </div>
+          <div className="home_third_container_content">
+            <div className="home_third_first">
+              <div className="home_third_first_image_wrapper">
+                <div className="home_third_first_image"></div>
+              </div>
+              <div className="home_third_first_content">
+                <div className="home_third_first_content_subdiv">
+                  <div className="home_third_first_content_primary">
+                    Air shipment
+                  </div>
+                  <div className="home_third_first_content_secondary">
+                    Fastest shipping method of goods, via air carrier and safe
+                    delivery. Shipping at the speed of light Fastest shipping
+                    method of goods, via air carrier and safe delivery_Shipping
+                    at the speed of light
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="home_third_container_content ">
+            <div className="home_third_first second">
+              <div className="home_third_first_image_wrapper">
+                <div className="home_third_first_image second_image"></div>
+              </div>
+              <div className="home_third_first_content">
+                <div className="home_third_first_content_subdiv">
+                  <div className="home_third_first_content_primary">
+                    Air shipment
+                  </div>
+                  <div className="home_third_first_content_secondary">
+                    Fastest shipping method of goods, via air carrier and safe
+                    delivery. Shipping at the speed of light Fastest shipping
+                    method of goods, via air carrier and safe delivery_Shipping
+                    at the speed of light
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="home_third_container_content">
+            <div className="home_third_first">
+              <div className="home_third_first_image_wrapper">
+                <div className="home_third_first_image third_image"></div>
+              </div>
+              <div className="home_third_first_content">
+                <div className="home_third_first_content_subdiv">
+                  <div className="home_third_first_content_primary">
+                    Air shipment
+                  </div>
+                  <div className="home_third_first_content_secondary">
+                    Fastest shipping method of goods, via air carrier and safe
+                    delivery. Shipping at the speed of light Fastest shipping
+                    method of goods, via air carrier and safe delivery_Shipping
+                    at the speed of light
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="home_fourth"></div>
       <div className="home_fifth"></div>
     </div>
