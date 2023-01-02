@@ -12,8 +12,7 @@ const Contact = (props) => {
         <div className="contact-address">
           <div className="addresstext-div">Address</div>
           <div className="address-div">
-            <span className="address-div-span">Address:</span> NAHCO EXPORT
-            WAREHOUSE, SHED 3, OFF INTERNATIONAL AIRPORT ROAD
+            <span className="address-div-span">Address:</span> NO 43, SHASHA AKOWONJO, OFF MOBIL FILLING STATTION, LAGOS
           </div>
           <div className="phone-div">
             <span className="phone-div-span">Phone:</span> +2348058316087
