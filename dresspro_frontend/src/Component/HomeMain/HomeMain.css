@@ -127,16 +127,43 @@
 
 .second_image{
   background: url("/src/assets/images/proper_inspection_desktop.png");
-
-
 }
 
 .third_image{
   background: url("/src/assets/images/documentation_desktop.png");
+}
 
+
+.home_fourth{
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  background: rgb(15,173,183);
+  margin-top: 40px;
 
 }
 
+.home_numbers_one{
+  text-align: center;
+}
+
+.home_numbers_up{
+  font-size: 2rem;
+  margin: 20px 0;
+  margin-top: 50px;
+}
+.home_numbers_middle{
+  border-bottom: 2px solid black;
+  width: 40px;
+  margin: 0 auto;
+}
+.home_numbers_down{
+  font-size: 1.125rem;
+  margin: 20px 0;
+  margin-bottom: 50px;
+
+
+}
 
 @media screen and  (max-width: 700px){
 
@@ -198,7 +225,29 @@
 }
 
 
-  
+.home_fourth{
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.home_numbers_up{
+  font-size: 2rem;
+  margin: 20px 0;
+  margin-top: 0px;
+}
+.home_numbers_middle{
+  border-bottom: 2px solid black;
+  width: 40px;
+  margin: 0 auto;
+}
+.home_numbers_down{
+  font-size: 1.125rem;
+  margin: 20px 0;
+  margin-bottom: 50px;
+
+
+}
+
 
 
 

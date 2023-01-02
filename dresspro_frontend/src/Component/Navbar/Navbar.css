@@ -149,7 +149,8 @@ nav a:active {
   nav {
     flex-direction: column;
     background: white;
-    height: 60px;
+    /* height: 60px; */
+    height: 43px;
   }
 
   .brand_and_toggle {
