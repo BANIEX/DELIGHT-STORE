@@ -44,7 +44,7 @@ export default function SpaceAtTheSide() {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [location, setLocation] = useState("canada");
-  const [locationPrice, setLocationPrice] = useState(2000);
+  const [locationPrice, setLocationPrice] = useState(1000);
   const navigate = useNavigate();
 
   
@@ -64,7 +64,7 @@ export default function SpaceAtTheSide() {
   const locationChanger = (chosenLocation) => {
     if (chosenLocation == "canada"){
       setLocation("canada")
-      setLocationPrice(2000);
+      setLocationPrice(1000);
        localforage
          .setItem("location", "canada")
          .then(function () {
@@ -80,7 +80,7 @@ export default function SpaceAtTheSide() {
     }
     if (chosenLocation == "uk") {
       setLocation("uk");
-      setLocationPrice(4000);
+      setLocationPrice(2000);
        localforage
          .setItem("location", "uk")
          .then(function () {
@@ -96,7 +96,7 @@ export default function SpaceAtTheSide() {
     }
     if (chosenLocation == "usa") {
       setLocation("usa");
-      setLocationPrice(5000);
+      setLocationPrice(3000);
        localforage
          .setItem("location", "usa")
          .then(function () {
@@ -277,7 +277,7 @@ export default function SpaceAtTheSide() {
     if (cartData.length > 0) {
       let cartSum = cartData.reduce(
         (previousValue, currentValue) =>
-          previousValue + ( + currentValue.product_price + locationPrice)  * currentValue.product_no_of_pieces,
+          previousValue + ( + currentValue.product_price + (locationPrice * currentValue.product_weight ))  * currentValue.product_no_of_pieces,
         0
       );
       console.log(cartSum);

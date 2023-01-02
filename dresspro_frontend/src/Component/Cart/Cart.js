@@ -171,6 +171,7 @@ const Cart = (props) => {
     let product_id = cartObject.product_id
     let product_price = cartObject.product_price;
     let product_description = cartObject.product_description;
+    let product_weight = cartObject.product_weight
     // let product_name_unspaced = product_name.replace(/\s+/g, "").toLowerCase();
 
     return (
@@ -183,13 +184,13 @@ const Cart = (props) => {
               {/* <div className="cart-name">{cloth_name}</div> */}
               {/* <div className="cart-name">Yellow Garri</div> */}
               <div className="cart-name">
-                <span>{product_name}</span>
+                <span>{product_name} | {product_weight}kg</span>
                 <br/>
                 <span>{product_description}</span>
               </div>
             </div>
           </div>
-          <div className="cart-specific-top-right">N{+ product_price + locationPrice}</div>
+          <div className="cart-specific-top-right">N{+ product_price + (locationPrice * product_weight)}</div>
         </div>
         <div className="cart-specific-bottom">
           <div>
