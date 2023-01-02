@@ -115,7 +115,7 @@ const Section = (props) => {
               {addOrRemoveText}
             </div>
             <div className="price_weight">
-              <span>Price: N{ + product_price + locationPrice}</span>
+              <span>Price: N{ + product_price + (locationPrice * product_weight )}</span>
               {product_volume.length > 0 ? (
                 <span>Volume: {product_volume}</span>
               ) : (
