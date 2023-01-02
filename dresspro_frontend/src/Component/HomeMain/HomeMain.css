@@ -209,10 +209,20 @@
 
 .home_third_first_content_primary {
     padding: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+
+
 }
+
+
 
 .home_third_first_content_secondary {
     font-size: .9375rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+
 }
 
 .home_third_first_image_wrapper {
