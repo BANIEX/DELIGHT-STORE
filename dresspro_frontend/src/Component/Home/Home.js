@@ -25,14 +25,14 @@ export default function Home(props) {
 
   return (
     <div onClick={navbar_closer}>
-      <SecondLayer />
+      {/* <SecondLayer /> */}
       <Product
         second_layer_hover={second_layer_hover}
         second_layer_hover_remove={second_layer_hover_remove}
         dressProData = {dressProData}
       />
       <Specific dressProData={dressProData} addToCartHandler={addToCartHandler}/>
-      <Feature />
+      {/* <Feature /> */}
     </div>
   );
 }

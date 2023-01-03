@@ -86,6 +86,12 @@ export default function Navbar(props) {
           <li className="links">
             <Link to="/policy">Company Policy</Link>
           </li>
+          <li className="links">
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          {/* <li className="links">
+            <Link to="/store">Store</Link>
+          </li> */}
           {/* <li className="links">
             <Link to="/manifest">Manifest</Link>
           </li> */}

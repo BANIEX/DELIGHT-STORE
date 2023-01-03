@@ -43,6 +43,8 @@ export default function SpaceAtTheSide() {
     is_user_verified: false,
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [location, setLocation] = useState("canada");
+  const [locationPrice, setLocationPrice] = useState(1000);
   const navigate = useNavigate();
 
   
@@ -57,6 +59,89 @@ export default function SpaceAtTheSide() {
     borderColor: "rgb(160, 110, 127)",
     zIndex: "60"
   };
+
+
+  const locationChanger = (chosenLocation) => {
+    if (chosenLocation == "canada"){
+      setLocation("canada")
+      setLocationPrice(1000);
+       localforage
+         .setItem("location", "canada")
+         .then(function () {
+           // return localforage.getItem("cartData");
+         })
+         .then(function (value) {
+           // we got our value
+         })
+         .catch(function (err) {
+           // we got an error
+         });
+
+    }
+    if (chosenLocation == "uk") {
+      setLocation("uk");
+      setLocationPrice(2000);
+       localforage
+         .setItem("location", "uk")
+         .then(function () {
+           // return localforage.getItem("cartData");
+         })
+         .then(function (value) {
+           // we got our value
+         })
+         .catch(function (err) {
+           // we got an error
+         });
+
+    }
+    if (chosenLocation == "usa") {
+      setLocation("usa");
+      setLocationPrice(3000);
+       localforage
+         .setItem("location", "usa")
+         .then(function () {
+           // return localforage.getItem("cartData");
+         })
+         .then(function (value) {
+           // we got our value
+         })
+         .catch(function (err) {
+           // we got an error
+         });
+
+    }
+
+  }
+
+
+  useEffect(() => {
+    // declare the data fetching function
+    const locationInfo = async () => {
+      const location = await localforage.getItem("location");
+      if (location) {
+        locationChanger(location);
+      }
+      else{
+         localforage
+           .setItem("location", "canada")
+           .then(function () {
+             // return localforage.getItem("cartData");
+           })
+           .then(function (value) {
+             // we got our value
+           })
+           .catch(function (err) {
+             // we got an error
+           });
+
+      }
+    };
+
+    // call the function
+    locationInfo()
+      // make sure to catch any error
+      .catch(console.error);
+  }, []);
 
   const isCartOpenHandler = () => {
     if (cartData.length === 0) {
@@ -192,7 +277,7 @@ export default function SpaceAtTheSide() {
     if (cartData.length > 0) {
       let cartSum = cartData.reduce(
         (previousValue, currentValue) =>
-          previousValue + currentValue.cloth_price * currentValue.no_of_pieces,
+          previousValue + ( + currentValue.product_price + (locationPrice * currentValue.product_weight ))  * currentValue.product_no_of_pieces,
         0
       );
       console.log(cartSum);
@@ -200,35 +285,34 @@ export default function SpaceAtTheSide() {
     }
 
     console.log(cartData);
-  }, [cartData]);
+  }, [cartData, locationPrice]);
 
-  const addToSpecificCart = (cloth_image) => {
-    console.log(cloth_image);
+  const addToSpecificCart = (product_id) => {
     let foundObject = cartData.find(
-      (cartDataObject) => cartDataObject.cloth_image === cloth_image
+      (cartDataObject) => cartDataObject.product_id === product_id
     );
     console.log(foundObject);
     let newCart = cartData.map((cartItem) => {
       if (cartItem === foundObject) {
-        return { ...cartItem, no_of_pieces: cartItem.no_of_pieces + 1 };
+        return { ...cartItem, product_no_of_pieces: cartItem.product_no_of_pieces + 1 };
       }
       return cartItem;
     });
     setCartData(newCart);
   };
 
-  const removeFromSpecificCart = (cloth_image) => {
+  const removeFromSpecificCart = (product_id) => {
     let foundObject = cartData.find(
-      (cartDataObject) => cartDataObject.cloth_image === cloth_image
+      (cartDataObject) => cartDataObject.product_id === product_id
     );
     let newCart = cartData.map((cartItem) => {
       if (cartItem === foundObject) {
         return {
           ...cartItem,
-          no_of_pieces:
-            cartItem.no_of_pieces === 0
-              ? cartItem.no_of_pieces
-              : cartItem.no_of_pieces - 1,
+          product_no_of_pieces:
+            cartItem.product_no_of_pieces === 0
+              ? cartItem.product_no_of_pieces
+              : cartItem.product_no_of_pieces - 1,
         };
       }
       return cartItem;
@@ -236,19 +320,23 @@ export default function SpaceAtTheSide() {
     setCartData(newCart);
   };
 
-  const addToCartHandler = (event, cloth_image, cloth_name, cloth_price) => {
+  const addToCartHandler = (event, product_name, product_price, product_weight, product_volume, product_image, product_no_of_pieces, product_id, product_description) => {
     let object = {
-      cloth_name,
-      cloth_image,
-      cloth_price,
-      no_of_pieces: 1,
+      product_name,
+      product_price,
+      product_weight,
+      product_volume,
+      product_image,
+      product_no_of_pieces,
+      product_id,
+      product_description
     };
     if (event.target.innerText === "ADD TO CART") {
       setCartData([...cartData, object]);
       event.target.innerText = "REMOVE FROM CART";
     } else {
       let newCartData = cartData.filter(
-        (specificCartObject) => specificCartObject.cloth_image !== cloth_image
+        (specificCartObject) => specificCartObject.product_id !== product_id
       );
       event.target.innerText = "ADD TO CART";
       setCartData(newCartData);
@@ -271,18 +359,21 @@ export default function SpaceAtTheSide() {
     );
   }
 
-  let new_cloth_route = dressProData.map((cloth_object, index) => {
-    let { name } = cloth_object;
-    let cloth_name_id = name.replace(/\s+/g, "").toLowerCase();
+  let new_cloth_route = dressProData.map((product_category, index) => {
+    let { name } = product_category;
+    let product_category_name_id = name.replace(/\s+/g, "").toLowerCase();
     return (
       <Route
-        path={"/" + cloth_name_id}
+        path={"/" + product_category_name_id}
         key={index}
         element={
           <Section
-            cloth_object={cloth_object}
+            product_category={product_category}
             cartData={cartData}
             addToCartHandler={addToCartHandler}
+            location={location}
+            locationPrice={locationPrice}
+            locationChanger={locationChanger}
           />
         }
       ></Route>
@@ -321,8 +412,8 @@ export default function SpaceAtTheSide() {
         <Routes>
           {/* {cloth_route} */}
           {new_cloth_route}
-          {/* <Route
-            path="/"
+          <Route
+            path="/store"
             element={
               <Home
                 dressProData={dressProData}
@@ -330,7 +421,7 @@ export default function SpaceAtTheSide() {
                 navbar_closer={navbar_closer}
               />
             }
-          ></Route> */}
+          ></Route>
 
           {/* <Route
             path="/customer"
@@ -373,6 +464,9 @@ export default function SpaceAtTheSide() {
                 removeFromCart={removeFromCart}
                 isLoggedIn={isLoggedIn}
                 userData={userData}
+                location={location}
+                locationPrice={locationPrice}
+                locationChanger={locationChanger}
               />
             }
           ></Route>

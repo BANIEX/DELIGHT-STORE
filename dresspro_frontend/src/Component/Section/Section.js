@@ -21,20 +21,40 @@ const Section = (props) => {
   let addToCartHandler = props.addToCartHandler;
   let cartData = props.cartData;
 
-  let cloth_object = props.cloth_object;
-  let cloth_name = props.cloth_object.name;
-  let cloth_price = props.cloth_object.price;
-  let cloth_images_link = props.cloth_object.images;
-  let cloth_name_unspaced = cloth_name.replace(/\s+/g, "").toLowerCase();
+  let location = props.location;
+  let locationPrice = props.locationPrice;
+  let locationChanger = props.locationChanger;
+
+  let product_category = props.product_category;
+  let product_category_products = product_category.products;
+  let product_category_name = props.product_category.name;
+  let product_category_name_unspaced = product_category_name.replace(/\s+/g, "").toLowerCase();
   let number_of_clothes = 20;
-  let cloth_name_lowercase = cloth_name.toLowerCase();
+  let product_category_name_lowercase = product_category_name.toLowerCase();
   let addOrRemoveText = "ADD TO CART";
 
   const addOrRemoveFunc = (cloth_images_link_specific) => {};
 
-  let image_divs = cloth_images_link.map((cloth_image, index) => {
+  let image_divs = product_category_products.map((specifc_product, index) => {
+
+    let {product_name} = specifc_product;
+    let { product_price } = specifc_product;
+    let { product_weight } = specifc_product;
+    let { product_volume } = specifc_product;
+    let { product_image } = specifc_product;
+    let { product_description } = specifc_product;
+    let { product_no_of_pieces } = specifc_product;
+    let { product_id } = specifc_product;
+
+
+
+
+
+
+
+
     for (let i = 0; i < cartData.length; i++) {
-      if (cloth_image == cartData[i].cloth_image) {
+      if (product_id == cartData[i].product_id) {
         addOrRemoveText = "REMOVE FROM CART";
         // console.log("found one")
         break;
@@ -58,37 +78,55 @@ const Section = (props) => {
             // Note that there is a space in the classname below hence it has two individual class
 
             className={
-              "section_image " + cloth_name_unspaced + "_image" + index
+              "section_image " +
+              product_category_name_unspaced +
+              "_image" +
+              index
             }
             style={{
-              backgroundImage: "url(" + cloth_image + ")",
+              backgroundImage: "url(" + product_image + ")",
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
           ></div>
-          <div className="section_image_hover" style={{ display: "block", width: "95%" }}>
+          <div
+            className="section_image_hover"
+            style={{ display: "block", width: "95%" }}
+          >
             {/* <div className="image_identity">{cloth_name_unspaced + index}</div> */}
             <div
               className="buy_now"
               style={{ textAlign: "center" }}
               onClick={(event) => {
-                addToCartHandler(event, cloth_image, cloth_name, cloth_price);
+                addToCartHandler(
+                  event,
+                  product_name,
+                  product_price,
+                  product_weight,
+                  product_volume,
+                  product_image,
+                  product_no_of_pieces,
+                  product_id,
+                  product_description
+                );
               }}
             >
               {addOrRemoveText}
             </div>
             <div className="price_weight">
-              <span>Price: N2100</span>
-              <span>Weight: 30kg</span>
+              <span>Price: N{ + product_price + (locationPrice * product_weight )}</span>
+              {product_volume.length > 0 ? (
+                <span>Volume: {product_volume}</span>
+              ) : (
+                <span>Weight: {product_weight}Kg</span>
+              )}
             </div>
             {/* <div>
               Yellow Garri | crunchy yellow garri for you to enjoy your life
             </div> */}
             <div className="price_weight">
-              <span>
-                Yellow Garri Crunchy yellow garri for you to enjoy your life. Soak away you sorrow with this ijebu garri
-              </span>
+              <span>{product_description}</span>
             </div>
           </div>
         </div>
@@ -99,8 +137,29 @@ const Section = (props) => {
   return (
     <div>
       <div className="section_info">
-        <div className="section_nav_display">Products &gt; {cloth_name} </div>
-        <div className="section_text_display">{cloth_name}</div>
+        <div className="section_nav_display">
+          Products &gt; {product_category_name}{" "}
+        </div>
+        <div className="section_text_display">{product_category_name}</div>
+        <div>
+          <label for="fname">Destination Country: </label>
+          <select
+            id="country"
+            name="country"
+            className=""
+            value={location}
+            onChange={(event) => {
+              locationChanger(event.target.value);
+              console.log(event.target.value)
+            }}
+          >
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="usa">USA</option>
+          </select>
+          <br />
+          <br />
+        </div>
       </div>
 
       <div className="section_image_section">{image_divs}</div>

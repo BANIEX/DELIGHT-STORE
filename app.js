@@ -29,7 +29,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: mongodbSessionStore,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 * 4 * 12 }, //12 months
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 * 4 * 12 }  //12 months
   })
 );
 
