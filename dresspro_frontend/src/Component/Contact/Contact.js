@@ -17,9 +17,9 @@ const Contact = (props) => {
           </div>
           <div className="phone-div">
             <span className="phone-div-span">Phone:</span>{" "}
-            <a href="+2348058316087">+2348058316087</a>
-            {",   "}
-            <a href="+2348060060590 ">+2348060060590</a>
+            <a href="tel:+2348058316087">+2348058316087</a>
+            {", "}
+            <a href="tel:+2348060060590 ">+2348060060590</a>
           </div>
           <div className="email-div">
             <span className="email-div-span">Email:</span>{" "}
