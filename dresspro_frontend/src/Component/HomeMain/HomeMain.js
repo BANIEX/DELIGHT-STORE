@@ -65,7 +65,7 @@ const HomeMain = (props) => {
                     Proper inspection
                   </div>
                   <div className="home_third_first_content_secondary">
-                    Proper inspection of goods against contraband brfore transit to ensure 100% success rate in delivery
+                    Proper inspection of goods against contraband before transit to ensure 100% success rate in delivery
                   </div>
                 </div>
               </div>
