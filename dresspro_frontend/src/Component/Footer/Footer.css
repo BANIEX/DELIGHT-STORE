@@ -57,7 +57,7 @@ footer {
   font-size: 25px;
 }
 .footer_socialmedia_specific_links  a i:hover {
-  color: palevioletred;
+  color: rgb(15,173,183);
 }
 
 
@@ -73,12 +73,12 @@ footer a:visited {
 
 /* mouse over link */
 footer a:hover {
-  color: palevioletred;
+  color: rgb(15,173,183);
 }
 
 /* selected link */
 footer a:active {
-  color: palevioletred;
+  color: rgb(15,173,183);
   /* border-top: 2px solid blue; */
 }
 

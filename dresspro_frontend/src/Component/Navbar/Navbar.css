@@ -108,7 +108,7 @@ nav {
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: rgb(183, 74, 110);}
+.dropdown:hover .dropbtn {background-color: rgb(13, 135, 144)}
 /* unvisited link */
 nav a:link {
   color: black;
