@@ -13,7 +13,10 @@ const Contact = (props) => {
           <div className="addresstext-div">Address</div>
           <div className="address-div">
             <span className="address-div-span">Address:</span>
-            <a href="https://goo.gl/maps/SGUrGwsGHD9xdihD9">
+            <a
+              href="https://goo.gl/maps/SGUrGwsGHD9xdihD9"
+              className="contact-clickables"
+            >
               {" "}
               NO 43, SHASHA AKOWONJO ROAD, OFF MOBIL FILLING STATION, LAGOS
               STATE
@@ -21,13 +24,20 @@ const Contact = (props) => {
           </div>
           <div className="phone-div">
             <span className="phone-div-span">Phone:</span>{" "}
-            <a href="tel:+2348058316087">+2348058316087</a>
+            <a href="tel:+2348058316087" className="contact-clickables">
+              +2348058316087
+            </a>
             {", "}
-            <a href="tel:+2348060060590 ">+2348060060590</a>
+            <a href="tel:+2348060060590" className="contact-clickables">
+              +2348060060590
+            </a>
           </div>
           <div className="email-div">
             <span className="email-div-span">Email:</span>{" "}
-            <a href="mailto:delightexpresscargo@gmail.com">
+            <a
+              href="mailto:delightexpresscargo@gmail.com"
+              className="contact-clickables"
+            >
               delightexpresscargo@gmail.com
             </a>
           </div>
@@ -36,7 +46,7 @@ const Contact = (props) => {
           <div className="addresstext-div">Opening Hours</div>
           <div className="address-div">
             <span className="address-div-span">Mondays -Thursdays:</span>{" "}
-            Drop-off days. Occurs within the time: 8am - 5pm
+            Drop-off days. Occurs within the time: 9am - 4pm
           </div>
           <div className="phone-div">
             <span className="phone-div-span">Fridays:</span> Handling over of
