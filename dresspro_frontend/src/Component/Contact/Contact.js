@@ -32,7 +32,7 @@ const Contact = (props) => {
           <div className="addresstext-div">Opening Hours</div>
           <div className="address-div">
             <span className="address-div-span">Mondays -Thursdays:</span>{" "}
-            Drop-off days. Occurs within the time: 9am - 3pm
+            Drop-off days. Occurs within the time: 8am - 5pm
           </div>
           <div className="phone-div">
             <span className="phone-div-span">Fridays:</span> Handling over of
