@@ -62,12 +62,16 @@ const registerRouter = router.post("/", async function (req, res, next) {
   } else {
     let hashedPassword = await bcryptjs.hash(password, 12);
 
-    const email_link = `https://delight-express-cargo.herokuapp.com/verify?email=${email}&&key=${key}`;
+    // const email_url = "https://www.delightexpresscargo.org"
+    const email_url = "http://localhost:3000/";
+
+
+    const email_link = `${email_url}/verify?email=${email}&&key=${key}`;
 
     const mailOptions = {
       from: process.env.EMAIL_ADDRESS,
       to: email,
-      subject: `DRESS PRO ACCOUNT VERIFICATION`,
+      subject: `DELIGHT EXPRESS ACCOUNT VERIFICATION`,
       html: `<body>
                         <h3>Congratulations ${first_name}, you are in the last phase of your account creation. Click the link below to complete your registration</h3>
                         <hr>
