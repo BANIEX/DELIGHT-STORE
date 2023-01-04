@@ -12,8 +12,12 @@ const Contact = (props) => {
         <div className="contact-address">
           <div className="addresstext-div">Address</div>
           <div className="address-div">
-            <span className="address-div-span">Address:</span> NO 43, SHASHA
-            AKOWONJO ROAD, OFF MOBIL FILLING STATION, LAGOS STATE
+            <span className="address-div-span">Address:</span>
+            <a href="https://goo.gl/maps/SGUrGwsGHD9xdihD9">
+              {" "}
+              NO 43, SHASHA AKOWONJO ROAD, OFF MOBIL FILLING STATION, LAGOS
+              STATE
+            </a>
           </div>
           <div className="phone-div">
             <span className="phone-div-span">Phone:</span>{" "}
