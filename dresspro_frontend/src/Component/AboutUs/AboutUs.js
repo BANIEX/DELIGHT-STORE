@@ -1,6 +1,8 @@
 import React from "react";
 import "./AboutUs.css";
-import img from "../../assets/images/cargo6.jpg";
+// import img from "../../assets/images/cargo6.jpg";
+import img from "../../assets/images/man_taping_large.jpg";
+
 
 export default function AboutUs(props) {
   let navbar_closer = props.navbar_closer;
@@ -21,7 +23,8 @@ export default function AboutUs(props) {
           We also make sure your goods are delivered as swift as possible
         </div>
         <div className="about_us_first_half_image">
-          <img src={img} alt="dress_pro" />
+          {/* <img src={img} alt="delight_worker" /> */}
+          <div className="about_us_sub_image"></div>
         </div>
       </div>
 
