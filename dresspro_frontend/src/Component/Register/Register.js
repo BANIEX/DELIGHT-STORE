@@ -147,7 +147,7 @@ const Register = (props) => {
           <SpinnerCircularFixed
             size={30}
             enabled={loading}
-            color="palevioletred"
+            color="rgb(15,173,183)"
             secondaryColor="white"
           />
         </div>

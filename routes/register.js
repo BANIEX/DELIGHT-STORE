@@ -69,7 +69,9 @@ const registerRouter = router.post("/", async function (req, res, next) {
     const email_link = `${email_url}/verify?email=${email}&&key=${key}`;
 
     const mailOptions = {
-      from: process.env.EMAIL_ADDRESS,
+      // from: process.env.EMAIL_ADDRESS,
+      // from: "Delight",
+      from: "Delight <baniex@delightexpresscargo.org>",
       to: email,
       subject: `DELIGHT EXPRESS ACCOUNT VERIFICATION`,
       html: `<body>

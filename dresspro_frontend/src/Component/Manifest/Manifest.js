@@ -131,7 +131,7 @@ const Manifest = (props) => {
     <div className="manifest-container" onClick={navbar_closer}>
       <div className="form">
         <p className="manifest-text">MANIFEST</p>
-        <br/>
+        <br />
 
         <p className="form-message-error">{message}</p>
         <input
@@ -170,7 +170,7 @@ const Manifest = (props) => {
         <SpinnerCircularFixed
           size={30}
           enabled={loading}
-          color="palevioletred"
+          color="rgb(15,173,183)"
           secondaryColor="white"
         />
       </div>

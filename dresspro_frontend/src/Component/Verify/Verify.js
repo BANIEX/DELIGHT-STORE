@@ -8,7 +8,7 @@ import { SpinnerCircularFixed } from "spinners-react";
 const Verify = () => {
   const navigate = useNavigate()
   let [searchParams, setSearchParams] = useSearchParams();
-  let [message, setMessage] = useState("h")
+  let [message, setMessage] = useState("")
   let [loading, setLoading] = useState(true);
 
   let email = searchParams.get("email");
@@ -65,13 +65,13 @@ const Verify = () => {
 
   return (
     <>
-      <div>Verify </div>
-      
+      <div>Verify... </div>
+
       <p>{message}</p>
       <SpinnerCircularFixed
         size={30}
         enabled={loading}
-        color="palevioletred"
+        color="rgb(15,173,183)"
         secondaryColor="white"
       />
     </>
