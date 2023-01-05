@@ -63,7 +63,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
     let hashedPassword = await bcryptjs.hash(password, 12);
 
     // const email_url = "https://www.delightexpresscargo.org"
-    const email_url = "http://localhost:3000/";
+    const email_url = "http://localhost:3000";
 
 
     const email_link = `${email_url}/verify?email=${email}&&key=${key}`;
