@@ -1,30 +1,27 @@
-import React from 'react'
-import axios from 'axios';
-import {useRef, useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import axios from "axios";
+import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { SpinnerCircularFixed } from "spinners-react";
 
-import "./Manifest.css"
+import "./Manifest.css";
 
 const Manifest = (props) => {
   const navigate = useNavigate();
   let navbar_closer = props.navbar_closer;
 
+  let { isLoggedIn, userData } = props;
 
+  useEffect(() => {
+    isUserAllowed();
+  }, []);
 
-  let {isLoggedIn, userData} = props;
-
-
-  useEffect(()=>{
-    isUserAllowed()
-  }, [])
-
-  const isUserAllowed = () =>{
-    console.log(isLoggedIn);
+  const isUserAllowed = () => {
+    //console.log(isLoggedIn);
     if (!isLoggedIn) {
       navigate("/register");
     }
-  }
+  };
   const receiverFullNameRef = useRef("");
   const receiverPhoneNumberRef = useRef("");
   // const receiverPhoneNumberRef = useRef("");
@@ -34,11 +31,10 @@ const Manifest = (props) => {
   const [message, setMessage] = useState("");
   let [loading, setLoading] = useState(false);
 
-
   const formChecker = () => {
-    if (receiverFullNameRef.current.value === ''){
+    if (receiverFullNameRef.current.value === "") {
       setMessage("Kindly fill the Receiver's Full Name");
-      return false
+      return false;
     }
     if (receiverPhoneNumberRef.current.value === "") {
       setMessage("Kindly fill the Receiver's Phone Number");
@@ -48,36 +44,29 @@ const Manifest = (props) => {
       setMessage("Kindly fill the Receiver's Address");
       return false;
     }
-    
+
     if (receiverCountryRef.current.value === "") {
       setMessage("Kindly fill the Receiver's Country");
       return false;
     }
 
-    return true
-  }
-
-  
-
-  
-
+    return true;
+  };
 
   const manifestSubmiter = () => {
-
-    if(formChecker()){
+    if (formChecker()) {
       // alert('about to send');
-      setLoading(true)
+      setLoading(true);
       let receiverName = receiverFullNameRef.current.value;
       let receiverPhoneNumber = receiverPhoneNumberRef.current.value;
       let receiverAddress = receiverAddressRef.current.value;
       let receiverCountry = receiverCountryRef.current.value;
 
       let date = new Date();
-      let timeSent = date.toString().slice(0, -40)
+      let timeSent = date.toString().slice(0, -40);
       // console.log(timeSent)
 
-      const {  first_name, last_name, phone_number } = userData;
-
+      const { first_name, last_name, phone_number } = userData;
 
       let manifestObject = {
         "Time sent": timeSent,
@@ -88,18 +77,18 @@ const Manifest = (props) => {
         "Receiver phone number": `'${receiverPhoneNumber}`,
         "Receiver address": receiverAddress,
         "Receiver country": receiverCountry,
-        "Location": "",
-        "Weight": "",
+        Location: "",
+        Weight: "",
         "No of pieces": "",
       };
 
-      
       axios
         .post(
-          "https://sheet.best/api/sheets/924413c1-08d8-467f-a665-fa1af3cdb23d", manifestObject
+          "https://sheet.best/api/sheets/924413c1-08d8-467f-a665-fa1af3cdb23d",
+          manifestObject
         )
         .then((result) => {
-          console.log(result);
+          //console.log(result);
           setMessage("Sent successfully");
           receiverFullNameRef.current.value = "";
           receiverPhoneNumberRef.current.value = "";
@@ -110,22 +99,14 @@ const Manifest = (props) => {
             setMessage("");
           }, 2000);
         })
-        .catch((error) => {console.log(error)}).finally(()=>{
+        .catch((error) => {
+          //console.log(error);
+        })
+        .finally(() => {
           setLoading(false);
         });
     }
-
-    
-
-    
-
-
-
-    
-  }
-
-
-
+  };
 
   return (
     <div className="manifest-container" onClick={navbar_closer}>
@@ -176,6 +157,6 @@ const Manifest = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export default Manifest
+export default Manifest;

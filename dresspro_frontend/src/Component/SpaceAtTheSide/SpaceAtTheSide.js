@@ -47,72 +47,65 @@ export default function SpaceAtTheSide() {
   const [locationPrice, setLocationPrice] = useState(1000);
   const navigate = useNavigate();
 
-  
   const override: CSSProperties = {
     display: "block",
     position: "absolute",
     top: "55px",
     left: "40px",
     // height: "20px",
-    
+
     margin: "0 auto",
     borderColor: "rgb(160, 110, 127)",
-    zIndex: "60"
+    zIndex: "60",
   };
 
-
   const locationChanger = (chosenLocation) => {
-    if (chosenLocation == "canada"){
-      setLocation("canada")
+    if (chosenLocation == "canada") {
+      setLocation("canada");
       setLocationPrice(1000);
-       localforage
-         .setItem("location", "canada")
-         .then(function () {
-           // return localforage.getItem("cartData");
-         })
-         .then(function (value) {
-           // we got our value
-         })
-         .catch(function (err) {
-           // we got an error
-         });
-
+      localforage
+        .setItem("location", "canada")
+        .then(function () {
+          // return localforage.getItem("cartData");
+        })
+        .then(function (value) {
+          // we got our value
+        })
+        .catch(function (err) {
+          // we got an error
+        });
     }
     if (chosenLocation == "uk") {
       setLocation("uk");
       setLocationPrice(2000);
-       localforage
-         .setItem("location", "uk")
-         .then(function () {
-           // return localforage.getItem("cartData");
-         })
-         .then(function (value) {
-           // we got our value
-         })
-         .catch(function (err) {
-           // we got an error
-         });
-
+      localforage
+        .setItem("location", "uk")
+        .then(function () {
+          // return localforage.getItem("cartData");
+        })
+        .then(function (value) {
+          // we got our value
+        })
+        .catch(function (err) {
+          // we got an error
+        });
     }
     if (chosenLocation == "usa") {
       setLocation("usa");
       setLocationPrice(3000);
-       localforage
-         .setItem("location", "usa")
-         .then(function () {
-           // return localforage.getItem("cartData");
-         })
-         .then(function (value) {
-           // we got our value
-         })
-         .catch(function (err) {
-           // we got an error
-         });
-
+      localforage
+        .setItem("location", "usa")
+        .then(function () {
+          // return localforage.getItem("cartData");
+        })
+        .then(function (value) {
+          // we got our value
+        })
+        .catch(function (err) {
+          // we got an error
+        });
     }
-
-  }
-
+  };
 
   useEffect(() => {
     // declare the data fetching function
@@ -120,20 +113,18 @@ export default function SpaceAtTheSide() {
       const location = await localforage.getItem("location");
       if (location) {
         locationChanger(location);
-      }
-      else{
-         localforage
-           .setItem("location", "canada")
-           .then(function () {
-             // return localforage.getItem("cartData");
-           })
-           .then(function (value) {
-             // we got our value
-           })
-           .catch(function (err) {
-             // we got an error
-           });
-
+      } else {
+        localforage
+          .setItem("location", "canada")
+          .then(function () {
+            // return localforage.getItem("cartData");
+          })
+          .then(function (value) {
+            // we got our value
+          })
+          .catch(function (err) {
+            // we got an error
+          });
       }
     };
 
@@ -148,7 +139,7 @@ export default function SpaceAtTheSide() {
       setIsCartOpen(false);
     } else {
       setIsCartOpen(true);
-      if(isLoggedIn){
+      if (isLoggedIn) {
         // let feedback = axios
         //   .post("/cart_store", cartData)
         //   .then((response) => {
@@ -158,14 +149,11 @@ export default function SpaceAtTheSide() {
         //   .catch((error) => {
         //     console.log(error);
         //   });
-
       }
-      
-
     }
   };
 
-  console.log(isCartOpen);
+  //console.log(isCartOpen);
 
   useEffect(() => {
     isCartOpenHandler();
@@ -175,17 +163,12 @@ export default function SpaceAtTheSide() {
     document.getElementsByClassName("links_div")[0].classList.toggle("show");
   }
 
-  function navbar_closer(){
-
+  function navbar_closer() {
     let navbar = document.getElementsByClassName("links_div")[0];
 
-    if (navbar.classList.contains("show")){
-         navbar.classList.remove("show");
+    if (navbar.classList.contains("show")) {
+      navbar.classList.remove("show");
     }
-
-
-
-    
   }
 
   useEffect(() => {
@@ -196,9 +179,9 @@ export default function SpaceAtTheSide() {
 
   const cartFromServer = (cart) => {
     setCartData(cart);
-    console.log(cart)
+    //console.log(cart);
   };
-  console.log(cartData)
+  //console.log(cartData);
 
   const signOutHandler = () => {
     let feedback = axios
@@ -215,8 +198,8 @@ export default function SpaceAtTheSide() {
   const dataFetcher = () => {
     axios.get("/data").then((data) => {
       setDressProData(data.data.data);
-      console.log(data.data);
-      console.log(data.data.user_data);
+      //console.log(data.data);
+      //console.log(data.data.user_data);
 
       if (data.data.user_data) {
         setIsLoggedIn(true);
@@ -233,7 +216,7 @@ export default function SpaceAtTheSide() {
 
   const userDataHandler = (data) => {
     // console.log(data)
-    console.log(data);
+   // console.log(data);
     setUserData(data);
     // console.log(data.cart_data)
     // if(data.cart_data){
@@ -277,24 +260,30 @@ export default function SpaceAtTheSide() {
     if (cartData.length > 0) {
       let cartSum = cartData.reduce(
         (previousValue, currentValue) =>
-          previousValue + ( + currentValue.product_price + (locationPrice * currentValue.product_weight ))  * currentValue.product_no_of_pieces,
+          previousValue +
+          (+currentValue.product_price +
+            locationPrice * currentValue.product_weight) *
+            currentValue.product_no_of_pieces,
         0
       );
-      console.log(cartSum);
+     // console.log(cartSum);
       setCartTotal(cartSum);
     }
 
-    console.log(cartData);
+   // console.log(cartData);
   }, [cartData, locationPrice]);
 
   const addToSpecificCart = (product_id) => {
     let foundObject = cartData.find(
       (cartDataObject) => cartDataObject.product_id === product_id
     );
-    console.log(foundObject);
+   // console.log(foundObject);
     let newCart = cartData.map((cartItem) => {
       if (cartItem === foundObject) {
-        return { ...cartItem, product_no_of_pieces: cartItem.product_no_of_pieces + 1 };
+        return {
+          ...cartItem,
+          product_no_of_pieces: cartItem.product_no_of_pieces + 1,
+        };
       }
       return cartItem;
     });
@@ -320,7 +309,17 @@ export default function SpaceAtTheSide() {
     setCartData(newCart);
   };
 
-  const addToCartHandler = (event, product_name, product_price, product_weight, product_volume, product_image, product_no_of_pieces, product_id, product_description) => {
+  const addToCartHandler = (
+    event,
+    product_name,
+    product_price,
+    product_weight,
+    product_volume,
+    product_image,
+    product_no_of_pieces,
+    product_id,
+    product_description
+  ) => {
     let object = {
       product_name,
       product_price,
@@ -329,7 +328,7 @@ export default function SpaceAtTheSide() {
       product_image,
       product_no_of_pieces,
       product_id,
-      product_description
+      product_description,
     };
     if (event.target.innerText === "ADD TO CART") {
       setCartData([...cartData, object]);
@@ -447,7 +446,6 @@ export default function SpaceAtTheSide() {
             element={<Contact navbar_closer={navbar_closer} />}
           ></Route>
 
-          
           <Route
             path="/policy"
             element={<Policy navbar_closer={navbar_closer} />}

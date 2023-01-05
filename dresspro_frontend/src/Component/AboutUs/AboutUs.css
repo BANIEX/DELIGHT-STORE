@@ -26,9 +26,14 @@
   margin: 0px auto;
   margin-top: 40px;
 }
-.about_us_first_half_image img {
+.about_us_first_half_image img, .about_us_first_half_image .about_us_sub_image {
   width: 100%;
   height: 100%;
+  background: url("/src/assets/images/man_taping_large.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
 .about_us_first_half_content {
   font-size: 1.2rem;
@@ -60,15 +65,19 @@
   width: 50%;
   height: 100%;
 }
+
 .about_us_second_half_bottom .about_us_second_half_left .about_us_second_half_left_image_container {
   margin: 0px auto;
   width: 80%;
   height: 80%;
   background: url("/src/assets/images/cargo5.jpg");
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .about_us_second_half_bottom .about_us_second_half_right {
   width: 50%;
+  text-align: left;
 }
 
 @media screen and (max-width: 700px) {
@@ -81,6 +90,16 @@
     width: 100%;
     font-size: medium;
   }
+
+  .about_us_first_half_image img, .about_us_first_half_image .about_us_sub_image {
+  width: 100%;
+  height: 100%;
+  background: url("/src/assets/images/cargo6.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
   .about_us_second_half_bottom {
     flex-direction: column;
     height: -webkit-max-content;
@@ -105,4 +124,5 @@
     width: 90%;
 
   }
+
 }

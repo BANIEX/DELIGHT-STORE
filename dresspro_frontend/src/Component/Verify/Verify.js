@@ -1,12 +1,11 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams,  } from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import axios from "axios";
 import { SpinnerCircularFixed } from "spinners-react";
 
-
 const Verify = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
   let [message, setMessage] = useState("")
   let [loading, setLoading] = useState(true);
@@ -14,18 +13,15 @@ const Verify = () => {
   let email = searchParams.get("email");
   let key = searchParams.get("key");
 
-  let verify_details = {email, key};
+  let verify_details = { email, key };
   // alert(email)
-
-
-  
 
   const verifyHandler = () => {
     let feedback = axios
       .post("/verify", verify_details)
       .then((response) => {
         let result = response.data;
-        console.log(result)
+        //////////////console.log(result)
         if (result.code === "Pre-verified user") {
           setMessage("Account already verified");
           let timer = setTimeout(() => {
@@ -44,24 +40,15 @@ const Verify = () => {
             navigate("/sign_in");
           }, "4000");
         }
-        
-        
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
+  };
 
-
-  }
-
-  useEffect(()=> {
-    verifyHandler()
-    
-
-  }, [])
-
-
-
+  useEffect(() => {
+    verifyHandler();
+  }, []);
 
   return (
     <>
@@ -76,6 +63,6 @@ const Verify = () => {
       />
     </>
   );
-}
+};
 
-export default Verify
+export default Verify;

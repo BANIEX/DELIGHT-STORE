@@ -7,7 +7,6 @@ import { SpinnerCircularFixed } from "spinners-react";
 const Register = (props) => {
   let navbar_closer = props.navbar_closer;
 
-
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -81,16 +80,13 @@ const Register = (props) => {
         phoneNumber,
       };
 
-      console.log(firstName, lastName, password, email);
+      //console.log(firstName, lastName, password, email);
 
       let feedback = axios
-        .post(
-          "/register",
-          registerInfo
-        )
+        .post("/register", registerInfo)
         .then((res) => {
           // Work with the response...
-          console.log(res);
+          //console.log(res);
 
           let response_code = res.data.code;
           let user_data = res.data.data;
@@ -101,19 +97,17 @@ const Register = (props) => {
             );
           }
           if (response_code === "previously-registered") {
-            setMessage(
-              "Previously registered. Can proceed to sign in"
-            );
+            setMessage("Previously registered. Can proceed to sign in");
           }
         })
         .catch((err) => {
           // Handle error
-          console.log(err);
+          //console.log(err);
         })
         .finally(() => {
           setLoading(false);
         });
-      console.log(feedback);
+      //console.log(feedback);
 
       firstNameRef.current.value = "";
       lastNameRef.current.value = "";
