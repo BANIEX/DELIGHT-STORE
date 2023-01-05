@@ -98,7 +98,7 @@ const HomeMain = (props) => {
           <div className="home_numbers_down">Packages Delivered</div>
         </div>
         <div className="home_numbers_one">
-          <div className="home_numbers_up">15+</div>
+          <div className="home_numbers_up">200+</div>
           <div className="home_numbers_middle"></div>
           <div className="home_numbers_down">Destination Countries</div>
         </div>

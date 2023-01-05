@@ -28,7 +28,9 @@ const Section = (props) => {
   let product_category = props.product_category;
   let product_category_products = product_category.products;
   let product_category_name = props.product_category.name;
-  let product_category_name_unspaced = product_category_name.replace(/\s+/g, "").toLowerCase();
+  let product_category_name_unspaced = product_category_name
+    .replace(/\s+/g, "")
+    .toLowerCase();
   let number_of_clothes = 20;
   let product_category_name_lowercase = product_category_name.toLowerCase();
   let addOrRemoveText = "ADD TO CART";
@@ -36,8 +38,7 @@ const Section = (props) => {
   const addOrRemoveFunc = (cloth_images_link_specific) => {};
 
   let image_divs = product_category_products.map((specifc_product, index) => {
-
-    let {product_name} = specifc_product;
+    let { product_name } = specifc_product;
     let { product_price } = specifc_product;
     let { product_weight } = specifc_product;
     let { product_volume } = specifc_product;
@@ -45,13 +46,6 @@ const Section = (props) => {
     let { product_description } = specifc_product;
     let { product_no_of_pieces } = specifc_product;
     let { product_id } = specifc_product;
-
-
-
-
-
-
-
 
     for (let i = 0; i < cartData.length; i++) {
       if (product_id == cartData[i].product_id) {
@@ -115,7 +109,9 @@ const Section = (props) => {
               {addOrRemoveText}
             </div>
             <div className="price_weight">
-              <span>Price: N{ + product_price + (locationPrice * product_weight )}</span>
+              <span>
+                Price: N{+product_price + locationPrice * product_weight}
+              </span>
               {product_volume.length > 0 ? (
                 <span>Volume: {product_volume}</span>
               ) : (
@@ -150,7 +146,7 @@ const Section = (props) => {
             value={location}
             onChange={(event) => {
               locationChanger(event.target.value);
-              console.log(event.target.value)
+              //console.log(event.target.value)
             }}
           >
             <option value="canada">Canada</option>

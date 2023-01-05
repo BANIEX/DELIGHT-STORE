@@ -15,7 +15,6 @@ const SignIn = (props) => {
   const cartFromServer = props.cartFromServer;
   let navbar_closer = props.navbar_closer;
 
-
   const override: CSSProperties = {
     display: "block",
 
@@ -42,7 +41,7 @@ const SignIn = (props) => {
     let email = emailRef.current.value;
     let password = passwordRef.current.value;
 
-    console.log(email, password);
+    //console.log(email, password);
 
     let loginInfo = {
       email,
@@ -58,18 +57,18 @@ const SignIn = (props) => {
         let response_code = res.data.code;
         let user_data = res.data.data;
 
-        console.log(response_code);
+        //console.log(response_code);
         if (response_code === "Login-success") {
           setLoading(false);
           isLoggedInHandler();
-          console.log(user_data);
+          //console.log(user_data);
           userDataHandler(user_data);
           if (user_data.cart_data) {
             setLoading(false);
             cartFromServer(user_data.cart_data);
           }
           // window.location.href = "http://localhost:3000";
-          navigate("/")
+          navigate("/");
         }
         if (response_code === "Wrong-details") {
           setLoading(false);
@@ -78,10 +77,10 @@ const SignIn = (props) => {
       })
       .catch((err) => {
         // Handle error
-        console.log(err);
+        //console.log(err);
       });
-    console.log(feedback);
-    console.log(feedback.data);
+    //console.log(feedback);
+    //console.log(feedback.data);
 
     if (feedback) {
       userDataHandler();

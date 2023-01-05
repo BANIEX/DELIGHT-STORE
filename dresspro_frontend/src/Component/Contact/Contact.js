@@ -18,7 +18,7 @@ const Contact = (props) => {
               className="contact-clickables"
             >
               {" "}
-              NO 43, SHASHA AKOWONJO ROAD, OFF MOBIL FILLING STATION, LAGOS
+              NO 43, SHASHA AKOWONJO ROAD, OFF MOBIL FILLING STATION,ALIMOSHO, LAGOS
               STATE
             </a>
           </div>

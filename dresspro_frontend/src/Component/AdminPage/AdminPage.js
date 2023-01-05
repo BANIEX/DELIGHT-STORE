@@ -12,11 +12,11 @@ const AdminPage = () => {
       password : passwordRef.current.value
     }
 
-    console.log(adminLoginDetails)
+    //console.log(adminLoginDetails)
 
     let feedback = axios.post("/admin/login", adminLoginDetails).then((res)=>{
       let response = res;
-      console.log(response)
+      //console.log(response)
 
     }).catch((err)=>{console.log(err )})
 

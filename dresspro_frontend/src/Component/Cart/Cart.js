@@ -19,7 +19,7 @@ const Cart = (props) => {
   let locationPrice = props.locationPrice;
   let locationChanger = props.locationChanger;
 
-  console.log(userData)
+  //console.log(userData)
 
   const receiverFirstNameRef = useRef("");
   const receiverLastNameRef = useRef("");
@@ -29,23 +29,18 @@ const Cart = (props) => {
 
   const [message, setMessage] = useState("Kindly fill this form");
 
-
-
   //  let  receiverFirstName = receiverFirstNameRef.current.value
   //  let  receiverLastName = receiverLastNameRef.current.value
   //  let receiverPhoneNumber = receiverPhoneNumberRef.current.value
   //  let receiverEmail =  receiverEmailRef.current.value
   //  let receiverCountry = receiverCountryRef.current.value
 
+  // //console.log(receiverDetails);
 
-   
-  // console.log(receiverDetails);
+  const { email, first_name, last_name } = userData;
+  console.log(email, first_name);
 
-  
-  const {email, first_name, last_name} = userData
-  console.log(email, first_name)
-
-  const checkout_store_data = {email, first_name, cartData}
+  const checkout_store_data = { email, first_name, cartData };
 
   const [paystackParams, setPaystackParams] = useState({
     // publicKey: "pk_test_5db88aea78d0c7d3cebbf3475a9621a3dceca439",
@@ -64,45 +59,34 @@ const Cart = (props) => {
     amount: cartTotal * 100,
     metadata: {
       name: `${first_name} ${last_name}`,
-    }
-  }
+    },
+  };
 
   const receiverDetailsChecker = () => {
-
-    
-   let receiverFirstName = receiverFirstNameRef.current.value;
-   let receiverLastName = receiverLastNameRef.current.value;
-   let receiverPhoneNumber = receiverPhoneNumberRef.current.value;
-   let receiverEmail = receiverEmailRef.current.value;
-   let receiverCountry = receiverCountryRef.current.value;
-    if(receiverFirstName.length === 0){
+    let receiverFirstName = receiverFirstNameRef.current.value;
+    let receiverLastName = receiverLastNameRef.current.value;
+    let receiverPhoneNumber = receiverPhoneNumberRef.current.value;
+    let receiverEmail = receiverEmailRef.current.value;
+    let receiverCountry = receiverCountryRef.current.value;
+    if (receiverFirstName.length === 0) {
       return false;
-
     }
-    if(receiverLastName.length === 0){
+    if (receiverLastName.length === 0) {
       return false;
-
     }
-    if(receiverPhoneNumber.length === 0){
+    if (receiverPhoneNumber.length === 0) {
       return false;
-
     }
-    if(receiverEmail.length === 0){
+    if (receiverEmail.length === 0) {
       return false;
-
     }
-    if(receiverCountry.length === 0){
+    if (receiverCountry.length === 0) {
       return false;
-
     }
     return true;
-  }
-
-
+  };
 
   const initializePayment = usePaystackPayment(paystackParamsB);
-
-  
 
   const navigate = useNavigate();
 
@@ -118,8 +102,6 @@ const Cart = (props) => {
 
     // go to paystack
 
-    
-
     initializePayment(onPaymentSuccess, onClose);
   };
 
@@ -132,21 +114,27 @@ const Cart = (props) => {
     let receiverEmail = receiverEmailRef.current.value;
     let receiverCountry = receiverCountryRef.current.value;
 
-    let receiverDetails = { receiverFirstName, receiverLastName, receiverPhoneNumber, receiverEmail, receiverCountry}
+    let receiverDetails = {
+      receiverFirstName,
+      receiverLastName,
+      receiverPhoneNumber,
+      receiverEmail,
+      receiverCountry,
+    };
 
-  const checkout_store_data = { email,cartData, receiverDetails };
+    const checkout_store_data = { email, cartData, receiverDetails };
 
     let feedback = axios
-    .post("/checkout_store", checkout_store_data)
-    .then((result)=>{
-      console.log(result)
-    })
-    .catch(()=>{})
+      .post("/checkout_store", checkout_store_data)
+      .then((result) => {
+        //console.log(result);
+      })
+      .catch(() => {});
   };
 
   const onClose = () => alert("Wait! You need this oil, don't go!!!!");
 
-  console.log(cartData);
+  //console.log(cartData);
 
   if (cartData.length === 0) {
     return <div>Empty Cart. Kindly Add to Cart</div>;
@@ -168,10 +156,10 @@ const Cart = (props) => {
     let product_name = cartObject.product_name;
     let product_image = cartObject.product_image;
     let product_no_of_pieces = cartObject.product_no_of_pieces;
-    let product_id = cartObject.product_id
+    let product_id = cartObject.product_id;
     let product_price = cartObject.product_price;
     let product_description = cartObject.product_description;
-    let product_weight = cartObject.product_weight
+    let product_weight = cartObject.product_weight;
     // let product_name_unspaced = product_name.replace(/\s+/g, "").toLowerCase();
 
     return (
@@ -180,17 +168,25 @@ const Cart = (props) => {
         <div className="cart-specific-top">
           <div className="cart-specific-top-left">
             <div className="cart-specific-top-left-content">
-              <img className="cart-img" alt="cart-img" src={product_image}></img>
+              <img
+                className="cart-img"
+                alt="cart-img"
+                src={product_image}
+              ></img>
               {/* <div className="cart-name">{cloth_name}</div> */}
               {/* <div className="cart-name">Yellow Garri</div> */}
               <div className="cart-name">
-                <span>{product_name} | {product_weight}kg</span>
-                <br/>
+                <span>
+                  {product_name} | {product_weight}kg
+                </span>
+                <br />
                 <span>{product_description}</span>
               </div>
             </div>
           </div>
-          <div className="cart-specific-top-right">N{+ product_price + (locationPrice * product_weight)}</div>
+          <div className="cart-specific-top-right">
+            N{+product_price + locationPrice * product_weight}
+          </div>
         </div>
         <div className="cart-specific-bottom">
           <div>
@@ -315,7 +311,7 @@ const Cart = (props) => {
             value={location}
             onChange={(event) => {
               locationChanger(event.target.value);
-              console.log(event.target.value);
+              //console.log(event.target.value);
             }}
           >
             <option value="canada">Canada</option>
