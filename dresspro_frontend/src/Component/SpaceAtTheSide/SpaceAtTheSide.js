@@ -29,6 +29,8 @@ import Verify from "../Verify/Verify";
 import Manifest from "../Manifest/Manifest";
 import Faq from "../Faq/Faq";
 import Contact from "../Contact/Contact";
+import TagManager from "react-gtm-module";
+
 
 export default function SpaceAtTheSide() {
   const [dressProData, setDressProData] = useState([]);
@@ -106,6 +108,10 @@ export default function SpaceAtTheSide() {
         });
     }
   };
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: "G-VPV3LFJ4L6" });
+  }, []);
 
   useEffect(() => {
     // declare the data fetching function
