@@ -34,6 +34,7 @@ let params = {
 const registerRouter = router.post("/", async function (req, res, next) {
   const first_name = req.body.firstName;
   const last_name = req.body.lastName;
+  const phone_number = req.body.phoneNumber
   const email = req.body.email;
   const password = req.body.password;
   const key = random(params);
@@ -354,7 +355,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
     const feedback = await client
       .db(process.env.DB_NAME)
       .collection("user_info")
-      .insertOne({ first_name, last_name, email, password: hashedPassword, key, is_user_verified, cart_data });
+      .insertOne({ first_name, last_name, email, phone_number, password: hashedPassword, key, is_user_verified, cart_data });
 
     if (feedback) {
 
