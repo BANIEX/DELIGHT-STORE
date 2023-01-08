@@ -1,22 +1,15 @@
 import React from "react";
 
-import { CSSProperties, useState } from "react";
+import {useState } from "react";
 
 import axios from "axios";
 import { SpinnerCircularFixed } from "spinners-react";
 
-
 import { useRef } from "react";
-import "./SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const SignIn = (props) => {
-  const userDataHandler = props.userDataHandler;
-  const isLoggedInHandler = props.isLoggedInHandler;
-  const cartFromServer = props.cartFromServer;
+const ForgotPassword = (props) => {
   let navbar_closer = props.navbar_closer;
-
- 
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -24,60 +17,45 @@ const SignIn = (props) => {
   const navigate = useNavigate();
 
   const emailRef = useRef(null);
-  const passwordRef = useRef(null);
 
-  let signInSender = async () => {
+  let emailSender = async () => {
     setLoading(true);
     let email = emailRef.current.value;
-    let password = passwordRef.current.value;
 
     //console.log(email, password);
 
-    let loginInfo = {
+    let emailInfo = {
       email,
-      password,
     };
 
     let feedback = axios
-      .post("/sign_in", loginInfo)
+      .post("/forgot_password", emailInfo)
       .then((res) => {
         // Work with the response...
         // console.log(res);
 
         let response_code = res.data.code;
-        let user_data = res.data.data;
 
         //console.log(response_code);
-        if (response_code === "Login-success") {
+        if (response_code === "Reset-mail-sent") {
           setLoading(false);
-          isLoggedInHandler();
+          setMessage("Reset Password Link has been sent to your mail");
+
           //console.log(user_data);
-          userDataHandler(user_data);
-          if (user_data.cart_data) {
-            setLoading(false);
-            cartFromServer(user_data.cart_data);
-          }
+          
           // window.location.href = "http://localhost:3000";
-          navigate("/");
+          // navigate("/");
         }
-        if (response_code === "Wrong-details") {
+        if (response_code === "Invalid-email") {
           setLoading(false);
-          setMessage("Invalid login details");
+          setMessage("User does not exist");
         }
       })
       .catch((err) => {
         // Handle error
         //console.log(err);
       });
-    //console.log(feedback);
-    //console.log(feedback.data);
 
-    if (feedback) {
-      userDataHandler();
-    }
-
-    // emailRef.current.value = "";
-    // passwordRef.current.value = "";
   };
 
   return (
@@ -86,23 +64,17 @@ const SignIn = (props) => {
         <div className="form">
           <div>{message}</div>
           <input type="email" placeholder="E-mail" ref={emailRef} />
-          <input type="password" placeholder="Password" ref={passwordRef} />
-          <button type="button" onClick={signInSender}>
-            Login
+          <button type="button" onClick={emailSender}>
+            Reset Password
           </button>
           <p className="message">
-            Not registered?
-            <Link to="/register" className="click" id="register">
+            Back to
+            <Link to="/sign_in" className="click" id="register">
               {" "}
-              Create an account
+              Sign In
             </Link>
           </p>
-          <p className="message">
-            <Link to="/forgot-password" className="click" id="register">
-              {" "}
-              Forgot Password?
-            </Link>
-          </p>
+          
           <SpinnerCircularFixed
             size={20}
             enabled={loading}
@@ -115,4 +87,4 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+export default ForgotPassword;

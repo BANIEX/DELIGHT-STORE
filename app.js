@@ -43,6 +43,10 @@ let cart_storeRouter = require("./routes/cart_store");
 let admin_sign_inRouter = require("./routes/admin_sign_in");
 let verifyRouter = require("./routes/verify");
 let checkout_storeRouter = require("./routes/checkout_store")
+let forgot_passwordRouter = require("./routes/forgot_password")
+let reset_passwordRouter = require("./routes/reset_password");
+let change_passwordRouter = require("./routes/change_password");
+
 
 
 
@@ -56,6 +60,10 @@ app.use("/cart_store",cart_storeRouter);
 app.use("/admin/login", admin_sign_inRouter);
 app.use("/verify", verifyRouter)
 app.use("/checkout_store", checkout_storeRouter);
+app.use("/forgot_password", forgot_passwordRouter);
+app.use("/reset_password", reset_passwordRouter);
+app.use("/change_password", change_passwordRouter )
+
 
 // for deploymrny
 

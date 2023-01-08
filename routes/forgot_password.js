@@ -1,13 +1,13 @@
-var express = require("express");
-var router = express.Router();
+const { Router } = require("express");
+const router = Router();
 require("dotenv").config();
-const random = require("simple-random-number-generator");
-
+const jwt = require("jsonwebtoken")
 
 const mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
 const client = new mongoClient(process.env.DB_URL);
-const bcryptjs = require("bcryptjs");
+
+const JWT_SECRET = "extremelyclassifieddinformation"
 
 const nodemailer = require("nodemailer");
 
@@ -22,71 +22,40 @@ var transporter = nodemailer.createTransport({
   },
 });
 
-let params = {
-  min: 1000000,
-  max: 100000000,
-  integer: true,
-};
 
 
 
-/* GET users listing. */
-const registerRouter = router.post("/", async function (req, res, next) {
-  const first_name = req.body.firstName;
-  const last_name = req.body.lastName;
-  const phone_number = req.body.phoneNumber
-  const email = req.body.email;
-  const password = req.body.password;
-  const key = random(params);
-  const is_user_verified = false;
-  const cart_data = [];
-  const order_data = [];  
 
-  
-          
+const forgot_password = router.post("/", async function (request, response) {
+  let email = request.body.email;
+  console.log(email);
+
+  let feedback = await client.db(process.env.DB_NAME).collection("user_info").findOne({email});
+  console.log(feedback)
+  if (feedback){
+    const email_url = process.env.EMAIL_URL;
+    let email = feedback.email;
+    let password = feedback.password;
+    // let password = "baniex";
 
 
-  console.log(first_name, last_name, email, password);
+    const secret = JWT_SECRET + password;
 
-  const feedback = await client
-    .db(process.env.DB_NAME)
-    .collection("user_info")
-    .findOne({ email });
-  console.log(feedback);
+    const payload = {
+      email : email
+    }
 
-  if (feedback) {
-    res.send({
-      message: "User already registered, can proceed to sign in",
-      data: [],
-      code: "previously-registered"
-    });
-  } else {
-    let hashedPassword = await bcryptjs.hash(password, 12);
+    const token = jwt.sign(payload, secret, {expiresIn: "5m"})
 
-    // const email_url = "https://www.delightexpresscargo.org"
-    // const email_url = "http://localhost:3000";
-    const email_url = process.env.EMAIL_URL
+    const email_link = `${email_url}/reset-password?email=${email}&&token=${token}`;
 
+    console.log(email_link);
 
-    const email_link = `${email_url}/verify?email=${email}&&key=${key}`;
-
-    // const mailOptions = {
-    //   from: "Delight <baniex@delightexpresscargo.org>",
-    //   to: email,
-    //   subject: `DELIGHT EXPRESS ACCOUNT VERIFICATION`,
-    //   html: `<body>
-    //                     <h3>Congratulations ${first_name}, you are in the last phase of your account creation. Click the link below to complete your registration</h3>
-    //                     <hr>
-    //                     <br>
-    //                     <a target='_blank' href='${email_link}'>Verify here</a>
-    //             </body>`,
-    // };
-
-    const mailOptions = {
-      from: "Delight <baniex@delightexpresscargo.org>",
-      to: email,
-      subject: `DELIGHT EXPRESS ACCOUNT VERIFICATION`,
-      html: `<!DOCTYPE html>
+     const mailOptions = {
+       from: "Delight <baniex@delightexpresscargo.org>",
+       to: email,
+       subject: `DELIGHT EXPRESS PASSWORD RESET`,
+       html: `<!DOCTYPE html>
 <html>
 <head>
 
@@ -184,7 +153,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
 
   <!-- start preheader -->
   <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opacity: 0;">
-      Hi ${first_name}, your account verification is to be finalized here  
+    A password reset action has been triggered for your account
   </div>
   <!-- end preheader -->
 
@@ -229,7 +198,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
-              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Confirm Your Email Address</h1>
+              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Password Reset</h1>
             </td>
           </tr>
         </table>
@@ -255,7 +224,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
           <!-- start copy -->
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-              <p style="margin: 0;">Tap the button below to confirm your email address. If you didn't create an account with <a href="${email_url}">Delight Express Cargo</a>, you can safely delete this email.</p>
+              <p style="margin: 0;">Tap the button below to reset your password. If you didn't request a password change with <a href="${email_url}">Delight Express Cargo</a>, you can safely ignore this mail.</p>
             </td>
           </tr>
           <!-- end copy -->
@@ -269,7 +238,7 @@ const registerRouter = router.post("/", async function (req, res, next) {
                     <table border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td align="center" bgcolor="#0fadb7" style="border-radius: 6px;">
-                          <a href='${email_link}' target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Verify</a>
+                          <a href='${email_link}' target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Reset Password</a>
                         </td>
                       </tr>
                     </table>
@@ -349,52 +318,48 @@ const registerRouter = router.post("/", async function (req, res, next) {
 
 </body>
 </html>`,
-    };
+     };
 
 
-    const feedback = await client
-      .db(process.env.DB_NAME)
-      .collection("user_info")
-      .insertOne({ first_name, last_name, email, phone_number, password: hashedPassword, key, is_user_verified, cart_data });
+       transporter.sendMail(mailOptions, async function (error, info) {
+         if (error) {
+           console.log(error);
+           res.send({
+             message: "Email sending error,",
+             data: {
+               email,
+             },
+             code: "email-send-error",
+           });
 
-    if (feedback) {
+           throw error;
+         } else {
+           console.log("Email sent: " + info.response);
+           res.send({
+             message:
+               "Password reset email sent successfully",
+             data: {
+               email,
+             },
+             code: "password-reset-email-sent",
+           });
+         }
+       });
 
-       transporter.sendMail(mailOptions, async function(error, info){
-        if (error) {
-          console.log(error);
-             res.send({
-               message:
-                 "Registration completed. Email sending error,",
-               data: {
-                 email,
-               },
-               code: "registration-successful",
-             });
-    
-          throw error
-        } else {
-          console.log('Email sent: ' + info.response);
-             res.send({
-               message:
-                 "User Successfully registered and email sent, can proceed to sign in",
-               data: {
-                 email,
-               },
-               code: "registration-successful",
-             });
-    
-        }
-      })
-
-             
-
-   
-    }
+  
 
 
-}
 
-  // res.send("respond with a resource");
+  }
+  else{
+    response.send({
+      message: "Email does not exist",
+      data: [],
+      code: "Invalid-email"
+    })
+  }
+
+  
 });
 
-module.exports = registerRouter;
+module.exports = forgot_password;

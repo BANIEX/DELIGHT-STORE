@@ -56,7 +56,7 @@ const Verify = () => {
 
       <p>{message}</p>
       <SpinnerCircularFixed
-        size={30}
+        size={20}
         enabled={loading}
         color="rgb(15,173,183)"
         secondaryColor="white"

@@ -53,9 +53,10 @@ textarea{
   background: rgb(13,144,152);
 }
 .form .message {
-  margin: 15px 0 0;
+  margin: 3px 0 0;
   color: #b3b3b3;
   font-size: 12px;
+  font-weight: 700;
 }
 .form .message .click {
   /* color: palevioletred; */

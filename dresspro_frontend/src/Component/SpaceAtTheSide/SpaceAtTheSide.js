@@ -30,6 +30,8 @@ import Manifest from "../Manifest/Manifest";
 import Faq from "../Faq/Faq";
 import Contact from "../Contact/Contact";
 import TagManager from "react-gtm-module";
+import ForgotPassword from "../ForgotPassword/ForgotPassword";
+import ResetPassword from "../ResetPassword/ResetPassword";
 
 
 export default function SpaceAtTheSide() {
@@ -49,17 +51,7 @@ export default function SpaceAtTheSide() {
   const [locationPrice, setLocationPrice] = useState(1000);
   const navigate = useNavigate();
 
-  const override: CSSProperties = {
-    display: "block",
-    position: "absolute",
-    top: "55px",
-    left: "40px",
-    // height: "20px",
-
-    margin: "0 auto",
-    borderColor: "rgb(160, 110, 127)",
-    zIndex: "60",
-  };
+ 
 
   const locationChanger = (chosenLocation) => {
     if (chosenLocation == "canada") {
@@ -502,6 +494,14 @@ export default function SpaceAtTheSide() {
           ></Route>
           <Route path="/admin/login" element={<AdminPage />}></Route>
           <Route path="/verify" element={<Verify />}></Route>
+          <Route
+            path="/forgot-password"
+            element={<ForgotPassword navbar_closer={navbar_closer} />}
+          ></Route>
+          <Route
+            path="/reset-password"
+            element={<ResetPassword navbar_closer={navbar_closer} />}
+          ></Route>
         </Routes>
         <Footer />
       </div>
