@@ -289,7 +289,7 @@ const forgot_password = router.post("/", async function (request, response) {
           <!-- start permission -->
           <tr>
             <td align="center" bgcolor="#e9ecef" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #666;">
-              <p style="margin: 0;">You received this email because we received a request for account verification. If you didn't request for this you can safely delete this email.</p>
+              <p style="margin: 0;">You received this email because we received a request for password reset. If you didn't request for this you can safely delete this email.</p>
             </td>
           </tr>
           <!-- end permission -->
@@ -324,7 +324,7 @@ const forgot_password = router.post("/", async function (request, response) {
        transporter.sendMail(mailOptions, async function (error, info) {
          if (error) {
            console.log(error);
-           res.send({
+           response.send({
              message: "Email sending error,",
              data: {
                email,
@@ -335,7 +335,7 @@ const forgot_password = router.post("/", async function (request, response) {
            throw error;
          } else {
            console.log("Email sent: " + info.response);
-           res.send({
+           response.send({
              message:
                "Password reset email sent successfully",
              data: {
@@ -355,7 +355,7 @@ const forgot_password = router.post("/", async function (request, response) {
     response.send({
       message: "Email does not exist",
       data: [],
-      code: "Invalid-email"
+      code: "invalid-email"
     })
   }
 

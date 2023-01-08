@@ -37,7 +37,7 @@ const ForgotPassword = (props) => {
         let response_code = res.data.code;
 
         //console.log(response_code);
-        if (response_code === "Reset-mail-sent") {
+        if (response_code === "password-reset-email-sent") {
           setLoading(false);
           setMessage("Reset Password Link has been sent to your mail");
 
@@ -46,10 +46,18 @@ const ForgotPassword = (props) => {
           // window.location.href = "http://localhost:3000";
           // navigate("/");
         }
-        if (response_code === "Invalid-email") {
+        if (response_code === "invalid-email") {
           setLoading(false);
           setMessage("User does not exist");
         }
+        if (response_code === "email-send-error") {
+          setLoading(false);
+          setMessage("Error. Try again later");
+        }
+
+
+
+
       })
       .catch((err) => {
         // Handle error
