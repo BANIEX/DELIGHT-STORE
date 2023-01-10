@@ -102,7 +102,7 @@ export default function SpaceAtTheSide() {
   };
 
   useEffect(() => {
-    // TagManager.initialize({ gtmId: "G-VPV3LFJ4L6" });
+    TagManager.initialize({ gtmId: "G-VPV3LFJ4L6" });
     TagManager.initialize({ gtmId: "GTM-N922K6Z" });
 
   }, []);
