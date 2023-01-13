@@ -41,6 +41,7 @@ export default function Specific(props) {
                    backgroundPosition: "center",
                    backgroundSize: "cover",
                    backgroundRepeat: "no-repeat",
+                   borderRadius: "10px",
                  }}
                ></div>
              </div>
@@ -54,6 +55,7 @@ export default function Specific(props) {
                    backgroundPosition: "center",
                    backgroundSize: "cover",
                    backgroundRepeat: "no-repeat",
+                   borderRadius: "10px",
                  }}
                ></div>
              </div>
@@ -67,6 +69,7 @@ export default function Specific(props) {
                    backgroundPosition: "center",
                    backgroundSize: "cover",
                    backgroundRepeat: "no-repeat",
+                   borderRadius: "10px",
                  }}
                ></div>
              </div>
@@ -79,6 +82,7 @@ export default function Specific(props) {
                    backgroundPosition: "center",
                    backgroundSize: "cover",
                    backgroundRepeat: "no-repeat",
+                   borderRadius: "10px",
                  }}
                ></div>
              </div>

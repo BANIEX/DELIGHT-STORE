@@ -1,6 +1,8 @@
 .section_image_section {
   display: flex;
   flex-wrap: wrap;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .section_image_container {
@@ -12,6 +14,11 @@
   height: max-content;
   margin-bottom: 40px;
   /* text-align: center; */
+}
+
+.section_image_container > div{
+  width: 85%;
+  margin: 0 auto;
 }
 
 .section_image, img {
@@ -72,6 +79,7 @@
   /* justify-content: space-between; */
   justify-content: space-around;
   font-weight: 800;
+  height: 30px;
 
   /* letter-spacing: 3px; */
   

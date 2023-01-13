@@ -74,6 +74,7 @@ const sign_inRouter = Router.post("/", async function (req, res, next) {
            first_name: feedback.first_name,
            last_name: feedback.last_name,
            cart_data: feedback.cart_data,
+           phone_number: feedback.phone_number,
            is_user_verified: feedback.is_user_verified
          };
       res.send({

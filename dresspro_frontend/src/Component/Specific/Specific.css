@@ -28,7 +28,7 @@
 }
 .specifics {
   height: 100%;
-  width: 95%;
+  width: 75%;
   /* margin: 0 auto; */
   /* border: 2px solid red; */
 }
@@ -39,8 +39,8 @@
 }
 .sub_specifics_more {
   width: max-content;
-  border: 2px solid palevioletred;
-  color: palevioletred;
+  border: 2px solid rgb(15,173,183);
+  color: rgb(15,173,183);
   margin: 0px auto;
   padding: 0px 5px;
   border-radius: 6px;
@@ -48,7 +48,7 @@
 }
 .sub_specifics_more:hover {
   color: white;
-  background: palevioletred;
+  background: rgb(15,173,183);
 }
 
 @media screen and (max-width: 800px) {

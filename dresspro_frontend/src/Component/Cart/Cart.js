@@ -124,8 +124,26 @@ const Cart = (props) => {
 
     const checkout_store_data = { email, cartData, receiverDetails };
 
+
+     let payedOrderDetails = {
+       senderFirstName: userData.first_name,
+       senderLastName: userData.last_name,
+       senderEmail: userData.email,
+       senderPhoneNumber: userData.phone_number,
+       receiverFirstName,
+       receiverLastName,
+       receiverPhoneNumber,
+       receiverEmail,
+       receiverCountry: receiverCountry,
+       cartData,
+       amountPaid: cartTotal,
+     };
+
     let feedback = axios
-      .post("/checkout_store", checkout_store_data)
+      .post(
+        "https://sheet.best/api/sheets/a0c56e01-da18-4e17-86c9-09cda964834f",
+        payedOrderDetails
+      )
       .then((result) => {
         //console.log(result);
       })

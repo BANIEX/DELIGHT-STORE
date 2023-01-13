@@ -1,5 +1,5 @@
 import "./SpaceAtTheSide.css";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect, CSSProperties } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -48,7 +48,7 @@ export default function SpaceAtTheSide() {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [location, setLocation] = useState("canada");
-  const [locationPrice, setLocationPrice] = useState(1000);
+  const [locationPrice, setLocationPrice] = useState(3400);
   const navigate = useNavigate();
 
  
@@ -56,7 +56,7 @@ export default function SpaceAtTheSide() {
   const locationChanger = (chosenLocation) => {
     if (chosenLocation == "canada") {
       setLocation("canada");
-      setLocationPrice(1000);
+      setLocationPrice(3400);
       localforage
         .setItem("location", "canada")
         .then(function () {
@@ -71,7 +71,7 @@ export default function SpaceAtTheSide() {
     }
     if (chosenLocation == "uk") {
       setLocation("uk");
-      setLocationPrice(2000);
+      setLocationPrice(3200);
       localforage
         .setItem("location", "uk")
         .then(function () {
@@ -86,7 +86,7 @@ export default function SpaceAtTheSide() {
     }
     if (chosenLocation == "usa") {
       setLocation("usa");
-      setLocationPrice(3000);
+      setLocationPrice(3200);
       localforage
         .setItem("location", "usa")
         .then(function () {
@@ -502,6 +502,7 @@ export default function SpaceAtTheSide() {
             path="/reset-password"
             element={<ResetPassword navbar_closer={navbar_closer} />}
           ></Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </div>

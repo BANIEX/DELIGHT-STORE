@@ -4,6 +4,7 @@ import SecondLayer from '../SecondLayer/SecondLayer';
 import Specific from '../Specific/Specific';
 import Feature from '../Feature/Feature';
 import Product from '../Product/Product';
+import WelcomeStore from '../WelcomeStore/WelcomeStore';
 
 export default function Home(props) {
 
@@ -26,11 +27,12 @@ export default function Home(props) {
   return (
     <div onClick={navbar_closer}>
       {/* <SecondLayer /> */}
-      <Product
+      {/* <WelcomeStore/> */}
+      {/* <Product
         second_layer_hover={second_layer_hover}
         second_layer_hover_remove={second_layer_hover_remove}
         dressProData = {dressProData}
-      />
+      /> */}
       <Specific dressProData={dressProData} addToCartHandler={addToCartHandler}/>
       {/* <Feature /> */}
     </div>

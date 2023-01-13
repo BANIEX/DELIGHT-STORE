@@ -54,6 +54,8 @@ export default function Product(props) {
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
+            borderRadius: "10px",
+            width: "170px"
           }}
           // style={{ background: "" }}
         >
@@ -77,7 +79,7 @@ export default function Product(props) {
         modules={[Autoplay, Navigation, Pagination]}
         slidesPerView={1}
         autoplay={{
-          delay: 2000,
+          delay: 100000,
           disableOnInteraction: false,
         }}
         breakpoints={{

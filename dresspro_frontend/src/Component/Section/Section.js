@@ -89,7 +89,7 @@ const Section = (props) => {
             style={{ display: "block", width: "95%" }}
           >
             {/* <div className="image_identity">{cloth_name_unspaced + index}</div> */}
-            <div
+            {/* <div
               className="buy_now"
               style={{ textAlign: "center" }}
               onClick={(event) => {
@@ -107,7 +107,7 @@ const Section = (props) => {
               }}
             >
               {addOrRemoveText}
-            </div>
+            </div> */}
             <div className="price_weight">
               <span>
                 Price: N{+product_price + locationPrice * product_weight}
@@ -124,6 +124,25 @@ const Section = (props) => {
             <div className="price_weight">
               <span>{product_description}</span>
             </div>
+          </div>
+          <div
+            className="buy_now"
+            style={{ textAlign: "center" }}
+            onClick={(event) => {
+              addToCartHandler(
+                event,
+                product_name,
+                product_price,
+                product_weight,
+                product_volume,
+                product_image,
+                product_no_of_pieces,
+                product_id,
+                product_description
+              );
+            }}
+          >
+            {addOrRemoveText}
           </div>
         </div>
       </div>
