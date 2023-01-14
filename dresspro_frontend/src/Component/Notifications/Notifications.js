@@ -3,9 +3,13 @@ import "./Notifications.css"
 import img from "../../assets/images/cargo6.jpg";
 
 
-const Notifications = () => {
+const Notifications = (props) => {
+
+  let navbar_closer = props.navbar_closer;
+
+
   return (
-    <div>
+    <div onClick={navbar_closer}>
       {/* <header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
