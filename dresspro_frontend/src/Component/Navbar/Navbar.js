@@ -93,14 +93,22 @@ export default function Navbar(props) {
             <Link to="/store">Store</Link>
           </li> */}
           {/* <li className="links">
-            <Link to="/manifest">Manifest</Link>
+            <Link to="/notification">Notifications</Link>
           </li> */}
-          
+
           {isLoggedIn && (
+            <li className="links">
+              <Link to="/notification">Notifications</Link>
+            </li>
+          )}
+
+          {/* {isLoggedIn && (
             <li className="links">
               <Link to="/manifest">Manifest</Link>
             </li>
-          )}
+          )} */}
+
+
           {/* <li className="links">
             <Link to="/faq">FAQ</Link>
           </li> */}

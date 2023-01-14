@@ -1,8 +1,8 @@
 import "./SpaceAtTheSide.css";
 import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect, CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import toast, { Toaster } from "react-hot-toast";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useBeforeunload } from "react-beforeunload";
 import Specific from "../Specific/Specific";
@@ -32,6 +32,9 @@ import Contact from "../Contact/Contact";
 import TagManager from "react-gtm-module";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import ResetPassword from "../ResetPassword/ResetPassword";
+import Notifications from "../Notifications/Notifications";
+
+
 
 
 export default function SpaceAtTheSide() {
@@ -50,6 +53,10 @@ export default function SpaceAtTheSide() {
   const [location, setLocation] = useState("canada");
   const [locationPrice, setLocationPrice] = useState(3400);
   const navigate = useNavigate();
+
+const notify = () => toast("Here is your toasasasasasasst.", {
+  duration: 4000});
+
 
  
 
@@ -202,7 +209,11 @@ export default function SpaceAtTheSide() {
       if (data.data.user_data) {
         setIsLoggedIn(true);
         setUserData(data.data.user_data);
+      // notify();
+
       }
+
+
     });
   };
 
@@ -219,6 +230,7 @@ export default function SpaceAtTheSide() {
     // console.log(data.cart_data)
     // if(data.cart_data){
     // setCartData(data.cart_data)
+
     // }
   };
 
@@ -399,6 +411,8 @@ export default function SpaceAtTheSide() {
           isLoggedIn={isLoggedIn}
           signOutHandler={signOutHandler}
         />
+        {/* <Toaster /> */}
+
         {/* <ClipLoader
           color="rgb(160, 110, 127)"
           loading="true"
@@ -466,42 +480,64 @@ export default function SpaceAtTheSide() {
               />
             }
           ></Route>
-          <Route
-            path="/sign_in"
-            element={
-              <SignIn
-                userDataHandler={userDataHandler}
-                isLoggedInHandler={isLoggedInHandler}
-                cartFromServer={cartFromServer}
-                navbar_closer={navbar_closer}
-              />
-            }
-          ></Route>
-          <Route
-            path="/register"
-            element={<Register navbar_closer={navbar_closer} />}
-          ></Route>
 
-          <Route
-            path="/manifest"
-            element={
-              <Manifest
-                isLoggedIn={isLoggedIn}
-                userData={userData}
-                navbar_closer={navbar_closer}
-              />
-            }
-          ></Route>
+          {!isLoggedIn && (
+            <Route
+              path="/sign_in"
+              element={
+                <SignIn
+                  userDataHandler={userDataHandler}
+                  isLoggedInHandler={isLoggedInHandler}
+                  cartFromServer={cartFromServer}
+                  navbar_closer={navbar_closer}
+                />
+              }
+            ></Route>
+          )}
+
+          {!isLoggedIn && (
+            <Route
+              path="/register"
+              element={<Register navbar_closer={navbar_closer} />}
+            ></Route>
+          )}
+
+          {isLoggedIn && (
+            <Route
+              path="/manifest"
+              element={
+                <Manifest
+                  isLoggedIn={isLoggedIn}
+                  userData={userData}
+                  navbar_closer={navbar_closer}
+                />
+              }
+            ></Route>
+          )}
+
           <Route path="/admin/login" element={<AdminPage />}></Route>
           <Route path="/verify" element={<Verify />}></Route>
-          <Route
-            path="/forgot-password"
-            element={<ForgotPassword navbar_closer={navbar_closer} />}
-          ></Route>
-          <Route
-            path="/reset-password"
-            element={<ResetPassword navbar_closer={navbar_closer} />}
-          ></Route>
+          {!isLoggedIn && (
+            <Route
+              path="/reset-password"
+              element={<ResetPassword navbar_closer={navbar_closer} />}
+            ></Route>
+          )}
+
+          {!isLoggedIn && (
+            <Route
+              path="/forgot-password"
+              element={<ForgotPassword navbar_closer={navbar_closer} />}
+            ></Route>
+          )}
+
+          {isLoggedIn && (
+            <Route
+              path="/notification"
+              element={<Notifications navbar_closer={navbar_closer} />}
+            ></Route>
+          )}
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
