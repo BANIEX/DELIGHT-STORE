@@ -96,11 +96,11 @@ export default function Navbar(props) {
             <Link to="/notification">Notifications</Link>
           </li> */}
 
-          {isLoggedIn && (
-            <li className="links">
-              <Link to="/notification">Notifications</Link>
-            </li>
-          )}
+          
+          <li className="links">
+            <Link to="/notification">Notifications</Link>
+          </li>
+          
 
           {/* {isLoggedIn && (
             <li className="links">
