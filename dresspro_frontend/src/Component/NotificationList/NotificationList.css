@@ -1,0 +1,32 @@
+.change-notification{
+
+  font-weight: 800;
+  margin-bottom: 100px;
+
+}
+
+.change-notification > input{
+  width: 75%;
+
+
+}
+
+.notification-input{
+  width: 60%;
+}
+
+.notification-lister, .notification-input{
+  /* margin-bottom: 9px; */
+}
+
+.each-notification-message{
+  /* margin-bottom: 20px; */
+}
+
+
+.notification-add{
+  width: 75%;
+  font-size: .625rem;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

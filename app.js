@@ -46,6 +46,8 @@ let checkout_storeRouter = require("./routes/checkout_store")
 let forgot_passwordRouter = require("./routes/forgot_password")
 let reset_passwordRouter = require("./routes/reset_password");
 let change_passwordRouter = require("./routes/change_password");
+let notificatonRouter = require("./routes/notification")
+let notification_changerRouter = require("./routes/notification_changer")
 
 
 
@@ -62,7 +64,9 @@ app.use("/verify", verifyRouter)
 app.use("/checkout_store", checkout_storeRouter);
 app.use("/forgot_password", forgot_passwordRouter);
 app.use("/reset_password", reset_passwordRouter);
-app.use("/change_password", change_passwordRouter )
+app.use("/change_password", change_passwordRouter);
+app.use("/notification", notificatonRouter);
+app.use("/notification_changer", notification_changerRouter)
 
 
 // for deploymrny

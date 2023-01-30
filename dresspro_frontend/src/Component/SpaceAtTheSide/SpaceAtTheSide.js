@@ -33,6 +33,7 @@ import TagManager from "react-gtm-module";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import Notifications from "../Notifications/Notifications";
+import ChangeNotification from "../ChangeNotification/ChangeNotification";
 
 
 
@@ -533,12 +534,14 @@ const notify = () => toast("Here is your toasasasasasasst.", {
             ></Route>
           )}
 
-          {isLoggedIn && (
-            <Route
-              path="/notification"
-              element={<Notifications navbar_closer={navbar_closer} />}
-            ></Route>
-          )}
+          
+          <Route
+            path="/notification"
+            element={<Notifications navbar_closer={navbar_closer} />}
+          ></Route>
+          
+
+          <Route path="/admin/change-notification" element={<ChangeNotification/>}></Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
