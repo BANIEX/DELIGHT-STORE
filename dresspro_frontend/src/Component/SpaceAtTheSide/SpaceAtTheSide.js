@@ -536,12 +536,12 @@ const notify = () => toast("Here is your toasasasasasasst.", {
 
           
           <Route
-            path="/notification"
+            path="/notifications"
             element={<Notifications navbar_closer={navbar_closer} />}
           ></Route>
           
 
-          <Route path="/admin/change-notification" element={<ChangeNotification/>}></Route>
+          <Route path="/admin/change-notifications" element={<ChangeNotification/>}></Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
