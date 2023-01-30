@@ -98,7 +98,7 @@ export default function Navbar(props) {
 
           
           <li className="links">
-            <Link to="/notification">Notifications</Link>
+            <Link to="/notifications">Notifications</Link>
           </li>
           
 
