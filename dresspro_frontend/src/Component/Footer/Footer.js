@@ -8,14 +8,16 @@ export default function Footer() {
         <div className="footer_top">
           <div className="footer_one">
             <div className="footer_about">
-              <div className="footer_about_heading" >ABOUT</div>
+              <div className="footer_about_heading">ABOUT</div>
               <div className="footer_about_story">
-                Delight Express Cargo helps you to send and receive packages in and out of the country to anywhere in the world at very affordable rates 
+                Delight Express Cargo helps you to send and receive packages in
+                and out of the country to anywhere in the world at very
+                affordable rates
               </div>
             </div>
           </div>
-          {/* <div className="footer_two">
-            <div className="footer_categories">
+          <div className="footer_two">
+            {/* <div className="footer_categories">
               <div className="footer_categories_heading">CATEGORIES</div>
               <div className="footer_categories_group_links">
                 <div className="footer_categories_specific_links">
@@ -42,25 +44,25 @@ export default function Footer() {
                   <a href="./two_pieces/two_pieces.html">Two Pieces</a>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="footer_quicklinks">
-              <div className="footer_quicklinks_heading">QUICK LINKS</div>
+              <div className="footer_quicklinks_heading">Developer</div>
               <div className="footer_quicklinks_group_links">
                 <div className="footer_quicklinks_specific_links">
-                  <a href="#product_section">Products</a>
+                  <a href="https://wa.me/2349061814601">Whatsapp</a>
                 </div>
                 <div className="footer_quicklinks_specific_links">
-                  <a href="customer_review.html">Customer Review</a>
+                  <a href="https://www.instagram.com/banjibaniex">Instagram</a>
                 </div>
-                <div className="footer_quicklinks_specific_links">
+                {/* <div className="footer_quicklinks_specific_links">
                   <a href="about_us.html">About Us</a>
-                </div>
-                <div className="footer_quicklinks_specific_links">
+                </div> */}
+                {/* <div className="footer_quicklinks_specific_links">
                   <a href="company_policy.html">Company Policy</a>
-                </div>
+                </div> */}
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="footer_bottom">
           <div className="footer_three">
@@ -75,7 +77,8 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  {" "}Delight Express
+                  {" "}
+                  Delight Express
                 </a>
               </strong>
             </div>
