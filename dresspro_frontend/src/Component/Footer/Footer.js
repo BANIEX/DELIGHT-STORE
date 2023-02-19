@@ -46,13 +46,15 @@ export default function Footer() {
               </div>
             </div> */}
             <div className="footer_quicklinks">
-              <div className="footer_quicklinks_heading">Developer</div>
+              <div className="footer_quicklinks_heading">Developer: </div>
               <div className="footer_quicklinks_group_links">
                 <div className="footer_quicklinks_specific_links">
-                  <a href="https://wa.me/2349061814601">Whatsapp</a>
+                  <a href="https://wa.me/2349061814601">Whatsapp{"  "}</a>
                 </div>
                 <div className="footer_quicklinks_specific_links">
-                  <a href="https://www.instagram.com/banjibaniex">Instagram</a>
+                  <a href="https://www.instagram.com/banjibaniex">
+                    Instagram{"  "}
+                  </a>
                 </div>
                 {/* <div className="footer_quicklinks_specific_links">
                   <a href="about_us.html">About Us</a>
