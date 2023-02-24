@@ -16,12 +16,13 @@
   /* text-align: center; */
 }
 
-.section_image_container > div{
+.section_image_container > div {
   width: 85%;
   margin: 0 auto;
 }
 
-.section_image, img {
+.section_image,
+img {
   /* margin: 0px auto; */
   width: 95%;
   /* height: 380px; */
@@ -74,7 +75,7 @@
   display: none;
 }
 
-.price_weight{
+.price_weight {
   display: flex;
   /* justify-content: space-between; */
   justify-content: space-around;
@@ -82,9 +83,8 @@
   height: 30px;
 
   /* letter-spacing: 3px; */
-  
 }
-.price_weight > span{
+.price_weight > span {
   font-size: 1rem;
   /* margin-right: 20px ; */
   text-align: center;

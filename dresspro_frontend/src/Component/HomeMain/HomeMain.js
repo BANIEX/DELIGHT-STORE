@@ -1,6 +1,8 @@
 import React from 'react'
 import "./HomeMain.css"
 import { Link } from "react-router-dom";
+import CloudinaryUploadWidget from "../CloudinaryUploadWidget/CloudinaryUploadWidget";
+
 
 // import plane from "../../assets/images/plane.png"
 // import container from "../../assets/images/container.png";
@@ -13,6 +15,8 @@ const HomeMain = (props) => {
   let navbar_closer = props.navbar_closer;
   return (
     <div onClick={navbar_closer}>
+      <CloudinaryUploadWidget />
+
       {/* classname below should be read as home_first_level depicting the layer of the div */}
       <div className="home_first">
         <div className="home_image"></div>
@@ -65,7 +69,8 @@ const HomeMain = (props) => {
                     Proper inspection
                   </div>
                   <div className="home_third_first_content_secondary">
-                    Proper inspection of goods against contraband before transit to ensure 100% success rate in delivery
+                    Proper inspection of goods against contraband before transit
+                    to ensure 100% success rate in delivery
                   </div>
                 </div>
               </div>

@@ -105,6 +105,11 @@ const Manifest = (props) => {
         .finally(() => {
           setLoading(false);
         });
+
+
+        axios.get("https://sheet.best/api/sheets/924413c1-08d8-467f-a665-fa1af3cdb23d").then((result)=>{
+          console.log(result);  
+        })
     }
   };
 
