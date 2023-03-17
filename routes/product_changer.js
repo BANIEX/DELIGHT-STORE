@@ -13,15 +13,69 @@ const product_changerRouter = router.post(
     console.log("product_changer");
     let product_data = request.body.product_data;
     console.log(product_data);
-    // not_data = {cart_data};
-    // console.log(request.session.data);
-    // let email = request.session.data.email;
-    // console.log(email);
+
+
+
+
+    const productStructurer = (product_data) => {
+      let possibleCategories = []
+      for (let i=0; i < product_data.length; i++ ){
+        let productCategory = product_data[i].category;
+        possibleCategories.push(productCategory);
+        console.log(productCategory);
+      }
+
+      let uniquePossibleCategories = new Set(possibleCategories);
+      uniquePossibleCategories = [...uniquePossibleCategories]
+      console.log(uniquePossibleCategories);
+      return uniquePossibleCategories
+
+    };
+
+   let uniquePossibleCategories = productStructurer(product_data)
+
+    const finalProductStructurer = (categoryName, product_data ) => {
+
+      let currentCategoryProducts = [];
+
+      for (let i = 0; i < product_data.length; i++) {
+       if(product_data[i].category === categoryName){
+        currentCategoryProducts.push(product_data[i])
+       }
+      }
+
+      return {
+        name: categoryName,
+        products: currentCategoryProducts
+      }
+
+    
+    };
+
+
+    // let answer = finalProductStructurer("Grains", product_data)
+    // console.log(answer);
+
+    let allInAll = [];
+
+    for (let i = 0; i < uniquePossibleCategories.length; i++){
+      let currentObject = finalProductStructurer(uniquePossibleCategories[i], product_data);
+      allInAll.push(currentObject);
+    }
+
+    console.log(allInAll)
+
+
+
+
+
+    
+    
 
     const feedback = await client
       .db(process.env.DB_NAME)
       .collection("product_store")
-      .updateOne({}, { $set: { notification_message: notification_data } });
+      .updateOne({}, { $set: { product_info: allInAll } });
 
     if (feedback) {
       console.log(feedback);
@@ -37,6 +91,7 @@ const product_changerRouter = router.post(
         code: "product changing error",
       });
     }
+
   }
 );
 

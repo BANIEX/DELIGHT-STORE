@@ -83,15 +83,15 @@ export default function Navbar(props) {
           <li className="links">
             <Link to="/about">About Us</Link>
           </li>
-          <li className="links">
+          {/* <li className="links">
             <Link to="/policy">Company Policy</Link>
-          </li>
+          </li> */}
           <li className="links">
             <Link to="/contact">Contact Us</Link>
           </li>
-          {/* <li className="links">
+          <li className="links">
             <Link to="/store">Store</Link>
-          </li> */}
+          </li>
           {/* <li className="links">
             <Link to="/notification">Notifications</Link>
           </li> */}
@@ -125,10 +125,10 @@ export default function Navbar(props) {
         </ul>
       </div>
       <div className="social">
-        {/* <Link to="/cart">
+        <Link to="/cart">
           <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           {"\u00A0"} Cart {"\u00A0"}
-        </Link> */}
+        </Link>
         {loggedInOrNotDesktop}
       </div>
     </nav>

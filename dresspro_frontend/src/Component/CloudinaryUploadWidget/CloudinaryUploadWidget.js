@@ -1,6 +1,8 @@
 import React from 'react'
 
-const CloudinaryUploadWidget = () => {
+const CloudinaryUploadWidget = (props) => {
+
+  let imageFunctionValue = props.imageFunctionValue;
 
    const cloudName = "dd1gg0wzh"; // replace with your own cloud name
    const uploadPreset = "mgozwakv";
@@ -24,28 +26,37 @@ const CloudinaryUploadWidget = () => {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info);
-          document
-            .getElementById("uploadedimage")
-            .setAttribute("src", result.info.secure_url);
+          imageFunctionValue(result.info.secure_url)
+          // document
+          //   .getElementById("uploadedimage")
+          //   .setAttribute("src", result.info.secure_url);
         }
       }
     );
 
-    var el = document.getElementById("upload_widget");
-    if(el){
-    el.addEventListener(
-      "click",
-      function () {
-        myWidget.open();
-      },
-      false
-    );
-
+    function upload_widget_opener(){
+      myWidget.open();
+      console.log("opennn");
+      // imageFunctionValue("mock stringggggggg");
     }
+    // var el = document.getElementById("upload_widget");
+    // if(el){
+    // el.addEventListener(
+    //   "click",
+    //   function () {
+    //     myWidget.open();
+    //     console.log("opennn")
+    //       // imageFunctionValue("mock stringggggggg");
+
+    //   },
+    //   false
+    // );
+
+    // }
   
   return (
     <div>
-      <button id="upload_widget" className="cloudinary-button">
+      <button onClick={upload_widget_opener} className="cloudinary-button">
         Upload
       </button>
     </div>

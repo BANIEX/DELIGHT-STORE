@@ -15,7 +15,7 @@ const HomeMain = (props) => {
   let navbar_closer = props.navbar_closer;
   return (
     <div onClick={navbar_closer}>
-      <CloudinaryUploadWidget />
+      {/* <CloudinaryUploadWidget /> */}
 
       {/* classname below should be read as home_first_level depicting the layer of the div */}
       <div className="home_first">

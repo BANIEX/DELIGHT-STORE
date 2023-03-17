@@ -34,6 +34,7 @@ import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import Notifications from "../Notifications/Notifications";
 import ChangeNotification from "../ChangeNotification/ChangeNotification";
+import AddProduct from "../AddProduct/AddProduct";
 
 
 
@@ -534,14 +535,19 @@ const notify = () => toast("Here is your toasasasasasasst.", {
             ></Route>
           )}
 
-          
           <Route
             path="/notifications"
             element={<Notifications navbar_closer={navbar_closer} />}
           ></Route>
-          
 
-          <Route path="/admin/change-notifications" element={<ChangeNotification/>}></Route>
+          <Route
+            path="/admin/change-notifications"
+            element={<ChangeNotification />}
+          ></Route>
+          <Route
+            path="/admin/add-products"
+            element={<AddProduct />}
+          ></Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
