@@ -4,7 +4,7 @@ import axios from 'axios'
 const LoadFromDbToProduct = async () => {
 
   try {
-    const data = await axios.get("/data"); 
+    const data = await axios.get("/product"); 
 
     console.log(data.data.data);
      

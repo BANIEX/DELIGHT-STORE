@@ -13,11 +13,25 @@ const productRouter = router.get("/", async function (request, response) {
     .collection("product_store")
     .findOne({});
 
+  
+
+
   if (feedback) {
-    console.log(feedback);
+
+
+    let arrayOfProductData = feedback.product_info;
+    let arrayToBeSent = [];
+
+    for (let i = 0; i < arrayOfProductData.length; i++) {
+      let currentCategoryObject = arrayOfProductData[i];
+      for (let j = 0; j < currentCategoryObject.products.length; j++) {
+        arrayToBeSent.push(currentCategoryObject.products[j]);
+      }
+    }
+
     response.send({
       message: "products sent",
-      data: feedback.product_info,
+      data: arrayToBeSent,
       code: "product-sent",
     });
   } else {

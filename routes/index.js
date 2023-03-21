@@ -569,6 +569,9 @@ let mock_array = [
 const indexRouter = Router.get("/", async function (request, response, next) {
 
 
+  // Send product data in normal format to customer client
+
+
   
         let feedback = await client
           .db(process.env.DB_NAME)
