@@ -5,6 +5,7 @@ import Table from "../Table/Table";
 import { randomColor, shortId } from "../Utils/Utils";
 import { grey } from "../Colors/Colors";
 import axios from "axios";
+import LoadFromDbToProduct from "../LoadFromDbToProduct/LoadFromDbToProduct";
 
 
 function reducer(state, action) {
@@ -218,10 +219,19 @@ function reducer(state, action) {
 function AddProduct() {
   const [state, dispatch] = useReducer(reducer, makeData(1));
 
+  console.log(makeData(1))
+
+  LoadFromDbToProduct();
+
   useEffect(() => {
     dispatch({ type: "enable_reset" });
     console.log(state.data)
   }, [state.data, state.columns]);
+
+
+  const loadFromDB = () =>{
+    let feedback = axios.get("")
+  }
 
 
   const saveToDB = () =>{
@@ -230,7 +240,7 @@ function AddProduct() {
       let response = res;
       //console.log(response)
 
-    }).catch((err)=>{console.log(err )})
+    }).catch((err)=>{console.log(err)})
 
   }
 

@@ -1,4 +1,12 @@
 const express = require("express");
+require("dotenv").config();
+const mongodb = require("mongodb");
+
+const mongoClient = mongodb.MongoClient;
+const client = new mongoClient(process.env.DB_URL);
+
+
+
 
 const Router = express.Router();
 
@@ -558,11 +566,25 @@ let mock_array = [
 ];
 
 
-const indexRouter = Router.get("/", function (request, response, next) {
+const indexRouter = Router.get("/", async function (request, response, next) {
+
+
+  
+        let feedback = await client
+          .db(process.env.DB_NAME)
+          .collection("product_store")
+          .findOne({});
+
+        console.log(feedback);
+        console.log("hi");
+
+        let product_data = feedback.product_info;
+        
 
     if(request.session){
+
       response.send({
-        data: dresspro_database,
+        data: product_data,
         user_data: request.session.data
       })
         console.log(request.session.data);
@@ -570,7 +592,7 @@ const indexRouter = Router.get("/", function (request, response, next) {
     }
     else{
       response.send({
-        data: dresspro_database,
+        data: product_data,
         user_data: null
       })
     }

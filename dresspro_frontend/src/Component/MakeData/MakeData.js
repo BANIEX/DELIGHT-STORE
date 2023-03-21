@@ -1,7 +1,9 @@
 import faker from "faker";
 import { randomColor } from "../Utils/Utils";
+import LoadFromDbToProduct from "../LoadFromDbToProduct/LoadFromDbToProduct";
 
 export default function makeData(count) {
+  // let data = LoadFromDbToProduct()
   let data = [];
   let options = [];
   for (let i = 0; i < count; i++) {

@@ -36,9 +36,12 @@ const product_changerRouter = router.post(
 
     const finalProductStructurer = (categoryName, product_data ) => {
 
+      
+
       let currentCategoryProducts = [];
 
       for (let i = 0; i < product_data.length; i++) {
+        product_data[i] = { ...product_data[i], product_no_of_pieces: 1, product_id: product_data[i].ID };
        if(product_data[i].category === categoryName){
         currentCategoryProducts.push(product_data[i])
        }
