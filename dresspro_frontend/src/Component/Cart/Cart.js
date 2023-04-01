@@ -92,13 +92,20 @@ const Cart = (props) => {
 
   const handlePaymentClick = (e) => {
     e.preventDefault();
-    if (!isLoggedIn) {
-      return navigate("/sign_in");
-    }
 
     if (!receiverDetailsChecker()) {
       return window.location.replace("/cart/#cart");
     }
+
+
+    if (!isLoggedIn) {
+
+
+      localStorage.setItem("checkoutUrl", window.location.href);
+      return navigate("/sign_in");
+    }
+
+    
 
     // go to paystack
 

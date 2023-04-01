@@ -53,11 +53,17 @@ const SignIn = (props) => {
           isLoggedInHandler();
           //console.log(user_data);
           userDataHandler(user_data);
-          if (user_data.cart_data) {
-            setLoading(false);
-            cartFromServer(user_data.cart_data);
-          }
+          // if (user_data.cart_data) {
+          //   setLoading(false);
+          //   cartFromServer(user_data.cart_data);
+          // }
           // window.location.href = "http://localhost:3000";
+
+          const checkoutUrl = localStorage.getItem('checkoutUrl');
+
+          if (checkoutUrl) {
+            return navigate("/cart");
+          }
           navigate("/");
         }
         if (response_code === "Wrong-details") {
