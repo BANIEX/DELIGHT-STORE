@@ -7,9 +7,31 @@ import { grey } from "../Colors/Colors";
 import axios from "axios";
 import LoadFromDbToProduct from "../LoadFromDbToProduct/LoadFromDbToProduct";
 
-
 function reducer(state, action) {
   switch (action.type) {
+    case "fetch_data_success":
+      const data = action.payload.data;
+      const options = action.payload.options;
+
+      const categoryColumnIndex = state.columns.findIndex(
+        (column) => column.id === "category"
+      );
+      const categoryColumn = state.columns[categoryColumnIndex];
+
+      const updatedCategoryColumn = {
+        ...categoryColumn,
+        options,
+      };
+
+      console.log(updatedCategoryColumn);
+
+      const updatedColumns = state.columns;
+      updatedColumns[categoryColumnIndex] = updatedCategoryColumn;
+
+      console.log(updatedColumns);
+
+      return { ...state, data, columns: updatedColumns };
+
     case "add_option_to_column":
       const optionIndex = state.columns.findIndex(
         (column) => column.id === action.columnId
@@ -206,43 +228,65 @@ function reducer(state, action) {
           ...state.columns.slice(deleteIndex + 1, state.columns.length),
         ],
       };
-    case "enable_reset":  // ENABLE RESET 
+    case "enable_reset": // ENABLE RESET
       return {
         ...state,
-        skipReset: false, 
+        skipReset: false,
       };
+
     default:
       return state;
   }
 }
 
 function AddProduct() {
-  const [state, dispatch] = useReducer(reducer, makeData(1));
+  const [state, dispatch] = useReducer(reducer, makeData());
 
-  console.log(makeData(1))
+  const capitalized = (word) => {
+    word.toLowerCase();
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  };
 
-  LoadFromDbToProduct();
+  // LoadFromDbToProduct();
+  useEffect(() => {
+    axios
+      .get("/product")
+      .then((response) => {
+        const data = response.data.data;
+
+        console.log(data)
+
+        const dataCategories = Array.from(
+          data.reduce(
+            (acc, dataEntry) => acc.add(dataEntry.category),
+            new Set()
+          )
+        );
+
+        const options = dataCategories.map((each) => ({
+          label: capitalized(each),
+          backgroundColor: randomColor(),
+        }));
+
+
+        dispatch({ type: "fetch_data_success", payload: { data, options } });
+      })
+      .catch();
+  }, []);
 
   useEffect(() => {
     dispatch({ type: "enable_reset" });
-    console.log(state.data)
+    console.log(state.data);
   }, [state.data, state.columns]);
 
-
-  const loadFromDB = () =>{
-    let feedback = axios.get("")
-  }
-
-
-  const saveToDB = () =>{
-
-     let feedback = axios.post("/product_changer", {product_data : state.data}).then((res)=>{
-      let response = res;
-      //console.log(response)
-
-    }).catch((err)=>{console.log(err)})
-
-  }
+  const saveToDB = () => {
+    axios
+      .post("/product_changer", { product_data: state.data })
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div
@@ -290,8 +334,9 @@ function AddProduct() {
           flexDirection: "column",
         }}
       >
-        
-        <div onClick={saveToDB}><button>Save</button></div>
+        <div onClick={saveToDB}>
+          <button>Save</button>
+        </div>
       </div>
     </div>
   );

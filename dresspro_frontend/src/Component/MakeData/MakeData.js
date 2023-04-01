@@ -1,33 +1,55 @@
 import faker from "faker";
 import { randomColor } from "../Utils/Utils";
+import axios from "axios";
 import LoadFromDbToProduct from "../LoadFromDbToProduct/LoadFromDbToProduct";
 
-export default function makeData(count) {
-  // let data = LoadFromDbToProduct()
+export default  function makeData() {
+
+  // const [dataFromproductDB, setDataFromProductDB] = useState([])
+
+  // useEffect(() => {
+  //   async function getProducts(){
+  //     const dataFromServer = await axios.get("/product");
+  //     console.log(dataFromServer.data.data);
+  //   }
+  
+  //   return () => {
+    
+  //   }
+  // }, [])
+
+
+
+
+  
+
+  
+
+
   let data = [];
   let options = [];
-  for (let i = 0; i < count; i++) {
-    let row = {
-      ID: faker.mersenne.rand(),
-      // productName: faker.name.firstName(),
-      product_name: "Honey Beans",
-      // productDescription: faker.name.lastName(),
-      product_description: "Picked honey beans for consumption",
-      // price: Math.floor(2000 + Math.random() * 20),
-      product_price: "2500",
-      // weight: Math.floor(20 + Math.random() * 20),
-      product_weight: "20",
-      product_volume: "1",
-      product_image:
-        "https://media.istockphoto.com/photos/package-of-dry-raw-peas-isolated-picture-id1182204006?s=612x612",
+  // for (let i = 0; i < count; i++) {
+  //   let row = {
+  //     ID: faker.mersenne.rand(),
+  //     // productName: faker.name.firstName(),
+  //     product_name: "Honey Beans",
+  //     // productDescription: faker.name.lastName(),
+  //     product_description: "Picked honey beans for consumption",
+  //     // price: Math.floor(2000 + Math.random() * 20),
+  //     product_price: "2500",
+  //     // weight: Math.floor(20 + Math.random() * 20),
+  //     product_weight: "20",
+  //     product_volume: "1",
+  //     product_image:
+  //       "https://media.istockphoto.com/photos/package-of-dry-raw-peas-isolated-picture-id1182204006?s=612x612",
 
-      // category: faker.music.genre(),
-      category: "Grains",
-    };
-    options.push({ label: row.category, backgroundColor: randomColor() });
+  //     // category: faker.music.genre(),
+  //     category: "Grains"
+  //   };
+  //   options.push({ label: row.category, backgroundColor: randomColor() });
 
-    data.push(row);
-  }
+  //   data.push(row);
+  // }
 
   let columns = [
     {
@@ -94,5 +116,6 @@ export default function makeData(count) {
       dataType: "null",
     },
   ];
-  return { columns: columns, data: data, skipReset: false };
+
+  return  { columns: columns, data: data, skipReset: false };
 }
