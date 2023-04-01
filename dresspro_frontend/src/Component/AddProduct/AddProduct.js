@@ -254,6 +254,8 @@ function AddProduct() {
       .then((response) => {
         const data = response.data.data;
 
+        // Hello Baniex
+
         console.log(data)
 
         const dataCategories = Array.from(
