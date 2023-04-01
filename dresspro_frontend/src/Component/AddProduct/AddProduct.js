@@ -255,6 +255,7 @@ function AddProduct() {
         const data = response.data.data;
 
         // Hello Baniex
+        // Banji
 
         console.log(data)
 
