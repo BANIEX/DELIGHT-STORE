@@ -5,7 +5,25 @@ let mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
 const client = new mongoClient(process.env.DB_URL);
 
-const productRouter = router.get("/", async function (request, response) {
+
+const restrictToIP = (req, res, next) => {
+  const allowedIP = "192.168.43.186"; // Replace with your IP address
+  const clientIP = req.ip;
+  if (clientIP !== allowedIP) {
+    console.log("hi")
+    return res.send({
+      message: "no authorization",
+      data: [],
+      code: "not-authorized",
+    });;
+  }
+  next();
+};
+
+const productRouter = router.get("/",  async function (request, response) {
+
+
+
   console.log("product");
 
   const feedback = await client

@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import "./AddProduct.css";
 import makeData from "../MakeData/MakeData";
+import { useNavigate } from "react-router-dom";
 import Table from "../Table/Table";
 import { randomColor, shortId } from "../Utils/Utils";
 import { grey } from "../Colors/Colors";
@@ -241,6 +242,8 @@ function reducer(state, action) {
 
 function AddProduct() {
   const [state, dispatch] = useReducer(reducer, makeData());
+  const navigate = useNavigate();
+
 
   const capitalized = (word) => {
     word.toLowerCase();
@@ -252,6 +255,7 @@ function AddProduct() {
     axios
       .get("/product")
       .then((response) => {
+
         const data = response.data.data;
 
         // Hello Baniex

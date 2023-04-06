@@ -22,6 +22,7 @@ const mongodbSessionStore = new mongodbSession({
 
 const app = express();
 
+
 app.use(sslRedirect());
 app.use(
   session({
@@ -57,6 +58,7 @@ let product_changerRouter = require("./routes/product_changer");
 
 app.use(cors());
 app.use(express.json());
+
 app.use("/data", indexRouter);
 app.use("/sign_in", sign_inRouter);
 app.use("/register", registerRouter);

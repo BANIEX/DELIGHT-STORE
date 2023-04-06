@@ -51,8 +51,13 @@ const SignIn = (props) => {
         if (response_code === "Login-success") {
           setLoading(false);
           isLoggedInHandler();
+
+
           //console.log(user_data);
+
+          
           userDataHandler(user_data);
+
           // if (user_data.cart_data) {
           //   setLoading(false);
           //   cartFromServer(user_data.cart_data);

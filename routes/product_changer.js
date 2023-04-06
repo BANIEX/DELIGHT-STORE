@@ -7,6 +7,22 @@ const mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
 const client = new mongoClient(process.env.DB_URL);
 
+
+
+const restrictToIP = (req, res, next) => {
+  const allowedIP = "192.168.43.186"; // Replace with your IP address
+  const clientIP = req.ip;
+  if (clientIP !== allowedIP) {
+    console.log("hi");
+    return res.send({
+      message: "no permission to save",
+      data: [],
+      code: "not-authorized",
+    });
+  }
+  next();
+};
+
 const product_changerRouter = router.post(
   "/",
   async function (request, response) {
