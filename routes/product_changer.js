@@ -26,6 +26,8 @@ const restrictToIP = (req, res, next) => {
 const product_changerRouter = router.post(
   "/",
   async function (request, response) {
+
+    console.log(request.ip)
     console.log("product_changer");
     let product_data = request.body.product_data;
     console.log(product_data);
