@@ -7,9 +7,13 @@ import { randomColor, shortId } from "../Utils/Utils";
 import { grey } from "../Colors/Colors";
 import axios from "axios";
 import LoadFromDbToProduct from "../LoadFromDbToProduct/LoadFromDbToProduct";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function reducer(state, action) {
   switch (action.type) {
+    // case "save_to_db_feedback":
+
     case "fetch_data_success":
       const data = action.payload.data;
       const options = action.payload.options;
@@ -289,7 +293,12 @@ function AddProduct() {
   const saveToDB = () => {
     axios
       .post("/product_changer", { product_data: state.data })
-      .then((res) => {})
+      .then((res) => {
+
+        const data = res.data;
+
+        console.log(data);
+      })
       .catch((err) => {
         console.log(err);
       });

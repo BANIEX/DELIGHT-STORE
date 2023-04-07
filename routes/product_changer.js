@@ -30,7 +30,7 @@ const product_changerRouter = router.post(
     console.log(request.ip)
     console.log("product_changer");
     let product_data = request.body.product_data;
-    console.log(product_data);
+    // console.log(product_data);
 
 
 
@@ -84,7 +84,7 @@ const product_changerRouter = router.post(
       allInAll.push(currentObject);
     }
 
-    console.log(allInAll)
+    // console.log(allInAll)
 
 
 
